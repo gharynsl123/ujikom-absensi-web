@@ -1,79 +1,189 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.dashboard')
 
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Absensi Web</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-    <!-- bootstap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-</head>
-
-<body>
-
-    <!-- ======= Mobile nav toggle button ======= -->
-    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
-    <!-- ======= Sidebar ======= -->
-    <header id="header" class="m-2 rounded">
-        <div class="d-flex flex-column">
-            <nav id="navbar" class="nav-menu navbar">
-                @include('admin.menu')
-            </nav>
-        </div>
-    </header><!-- Side Bar -->
-
-    <main id="main" class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
-        <!-- Navbar -->
-        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
-            data-scroll="true">
-            <div class="container-fluid py-1 px-3">
-                <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-                    <div class="ms-md-auto">
-                        <ul class="navbar-nav justify-content-end">
-                            <li class="nav-item d-flex align-items-center">
-                                <a href="{{'asset/pages/sign-in.html'}}"
-                                    class="nav-link text-body font-weight-bold px-0">
-                                    <span class="d-sm-inline d-none">Login</span>
+@section('content')
+<div class="col-12">
+    <ul class="nav nav-pills">
+        <li class="nav-item px-4">
+            <a class="nav-link active" href="#">Today</a>
+        </li>
+        <li class="nav-item px-4">
+            <a class="nav-link" href="#">History</a>
+        </li>
+    </ul>
+    <div class="card my-4">
+        <div class="card-body px-0 pb-2">
+            <div class="table-responsive">
+                <table class="table table-hover align-items-center m-0">
+                    <thead>
+                        <tr>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-3">
+                                Name</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                NISN</th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                Status</th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                Date</th>
+                            <th class="text-secondary opacity-7">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="d-flex px-2 py-1">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-sm">John Michael</h6>
+                                        <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="text-xs font-weight-bold mb-0">Manager</p>
+                            </td>
+                            <td class="align-middle text-center text-sm">
+                                <span class="badge badge-sm bg-gradient-success">Online</span>
+                            </td>
+                            <td class="align-middle text-center">
+                                <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
+                            </td>
+                            <td class="align-middle">
+                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
+                                    data-toggle="tooltip" data-original-title="Edit user">
+                                    Edit
                                 </a>
-                            </li>
-                            <li class="nav-item d-flex align-items-center ms-4">
-                                <a href="{{'asset/pages/sign-in.html'}}"
-                                    class="nav-link text-body font-weight-bold px-0">
-                                    <span class="d-sm-inline d-none">Register</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex px-2 py-1">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-sm">Alexa Liras</h6>
+                                        <p class="text-xs text-secondary mb-0">alexa@creative-tim.com
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="text-xs font-weight-bold mb-0">Programator</p>
+                            </td>
+                            <td class="align-middle text-center text-sm">
+                                <span class="badge badge-sm bg-gradient-secondary">Offline</span>
+                            </td>
+                            <td class="align-middle text-center">
+                                <span class="text-secondary text-xs font-weight-bold">11/01/19</span>
+                            </td>
+                            <td class="align-middle">
+                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
+                                    data-toggle="tooltip" data-original-title="Edit user">
+                                    Edit
                                 </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        @yield('content')
-    </main><!-- End #main -->
-
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="m-2 rounded">
-        <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong><span>iPortfolio</span></strong>
-            </div>
-            <div class="credits">
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex px-2 py-1">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-sm">Laurent Perrier</h6>
+                                        <p class="text-xs text-secondary mb-0">laurent@creative-tim.com
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="text-xs font-weight-bold mb-0">Executive</p>
+                            </td>
+                            <td class="align-middle text-center text-sm">
+                                <span class="badge badge-sm bg-gradient-success">Online</span>
+                            </td>
+                            <td class="align-middle text-center">
+                                <span class="text-secondary text-xs font-weight-bold">19/09/17</span>
+                            </td>
+                            <td class="align-middle">
+                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
+                                    data-toggle="tooltip" data-original-title="Edit user">
+                                    Edit
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex px-2 py-1">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-sm">Michael Levi</h6>
+                                        <p class="text-xs text-secondary mb-0">michael@creative-tim.com
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="text-xs font-weight-bold mb-0">Programator</p>
+                            </td>
+                            <td class="align-middle text-center text-sm">
+                                <span class="badge badge-sm bg-gradient-success">Online</span>
+                            </td>
+                            <td class="align-middle text-center">
+                                <span class="text-secondary text-xs font-weight-bold">24/12/08</span>
+                            </td>
+                            <td class="align-middle">
+                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
+                                    data-toggle="tooltip" data-original-title="Edit user">
+                                    Edit
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex px-2 py-1">
+                                    <h6 class="mb-0 text-sm">Richard Gran</h6>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="text-xs font-weight-bold mb-0">Manager</p>
+                            </td>
+                            <td class="align-middle text-center text-sm">
+                                <span class="badge badge-sm bg-gradient-secondary">Offline</span>
+                            </td>
+                            <td class="align-middle text-center">
+                                <span class="text-secondary text-xs font-weight-bold">04/10/21</span>
+                            </td>
+                            <td class="align-middle">
+                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
+                                    data-toggle="tooltip" data-original-title="Edit user">
+                                    Edit
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex px-2 py-1">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-sm">Miriam Eric</h6>
+                                        <p class="text-xs text-secondary mb-0">miriam@creative-tim.com
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="text-xs font-weight-bold mb-0">Programator</p>
+                            </td>
+                            <td class="align-middle text-center text-sm">
+                                <span class="badge badge-sm bg-gradient-secondary">Offline</span>
+                            </td>
+                            <td class="align-middle text-center">
+                                <span class="text-secondary text-xs font-weight-bold">14/09/20</span>
+                            </td>
+                            <td class="align-middle">
+                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
+                                    data-toggle="tooltip" data-original-title="Edit user">
+                                    Edit
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </footer><!-- End  Footer -->
-
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
-
-</body>
-<!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-
-</html>
+    </div>
+</div>
+@endsection
