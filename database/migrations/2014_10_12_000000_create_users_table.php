@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('username')->unique();
             $table->string('email')->unique();
-            $table->enum('lavel', ['admin', 'guru', 'kaprodi'])->default('guru');
+            $table->enum('lavel', ['admin', 'guru', 'kaprodi', 'siswa']);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
