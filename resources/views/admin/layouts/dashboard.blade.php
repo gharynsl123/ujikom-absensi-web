@@ -34,7 +34,7 @@
 <body class="g-sidenav-show bg-body">
     <aside class="sidenav navbar navbar-vertical navbar-expand-xs rounded-lg fixed-start m-2 bg-color"
         id="sidenav-main">
-        @include('layouts.aside')
+        @include('admin.layouts.aside')
     </aside>
     <main class="main-content position-relative max-height-vh-100 border-radius-lg">
 

@@ -6,6 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
+
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js"></script>
+
     <!-- Bootstraps -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
@@ -17,9 +25,28 @@
 <body class="bg-info">
 
     <div class="container d-flex justify-content-center vh-100">
-        <div class="card align-self-center p-4">
+        <div class="card shadow-lg rounded-lg align-self-center p-4">
             <p class="mx-5 font-weight-bolder align-self-center">Weclome</p>
             <p class="text-secondary">Please Choose According To Your Level</p>
+            <div type="button" class="btn btn-primary btn-lg btn-block">
+                    <i class="material-icons opacity-10">table_view</i>
+                <span>Block level button</span>
+            </div>
+            <button type="button" class="btn btn-secondary btn-lg btn-block">
+                <i class="material-icons"></i>
+                
+                <span>Block level button</span>
+            </button>
+            <button type="button" class="btn btn-primary btn-lg btn-block">
+                <i class="material-icons"></i>
+                
+                <span>Block level button</span>
+            </button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block">
+                <i class="material-icons"></i>
+                
+                <span>Block level button</span>
+            </button>
         </div>
     </div>
 
