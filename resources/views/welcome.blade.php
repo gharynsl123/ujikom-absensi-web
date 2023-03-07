@@ -28,25 +28,23 @@
         <div class="card shadow-lg rounded-lg align-self-center p-4">
             <p class="mx-5 font-weight-bolder align-self-center">Weclome</p>
             <p class="text-secondary">Please Choose According To Your Level</p>
-            <div type="button" class="btn btn-primary btn-lg btn-block">
-                    <i class="material-icons opacity-10">table_view</i>
-                <span>Block level button</span>
-            </div>
-            <button type="button" class="btn btn-secondary btn-lg btn-block">
+
+            <a type="button" href="/admin" class="btn btn-primary btn-lg btn-block">
+                <span>I'M Admin</span>
+            </a>
+            <a type="button" href="/guru" class="btn btn-secondary btn-lg btn-block">
+                
+                <span>I'M Teacher</span>
+            </a>
+            <a type="button" href="/kaprodi" class="btn btn-primary btn-lg btn-block">
                 <i class="material-icons"></i>
                 
-                <span>Block level button</span>
-            </button>
-            <button type="button" class="btn btn-primary btn-lg btn-block">
+                <span>I'M head of study program</span>
+            </a>
+            <a type="button" href="/siswa" class="btn btn-secondary btn-lg btn-block">
                 <i class="material-icons"></i>
-                
-                <span>Block level button</span>
-            </button>
-            <button type="button" class="btn btn-secondary btn-lg btn-block">
-                <i class="material-icons"></i>
-                
-                <span>Block level button</span>
-            </button>
+                <span>I'M Student</span>
+            </a>
         </div>
     </div>
 
