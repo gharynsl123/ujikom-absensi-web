@@ -20,6 +20,5 @@ Route::get('/', function () {
 
 Route::resource('/admin', 'AdminController');
 Route::resource('/user', 'UserStaffController');
-Route::resource('/make-user', 'CreateStaffController');
 
 Route::get('/guru', 'GuruController@index');
