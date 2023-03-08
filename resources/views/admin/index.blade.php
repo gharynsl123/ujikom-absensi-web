@@ -2,14 +2,26 @@
 
 @section('content')
 <div class="col-12">
-    <ul class="nav nav-pills">
-        <li class="nav-item px-4">
-            <a class="nav-link active" href="#">Today</a>
-        </li>
-        <li class="nav-item px-4">
-            <a class="nav-link" href="#">History</a>
-        </li>
-    </ul>
+    <div class="col-md-4 my-sm-auto me-sm-0">
+        <div class="nav-wrapper position-relative end-0">
+            <ul class="nav nav-pills nav-fill p-1" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link mb-0 px-0 active " data-bs-toggle="tab" href="javascript:;" role="tab"
+                        aria-selected="true">
+                        <i class="material-icons text-lg position-relative">today</i>
+                        <span class="ms-1">Today</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mb-0 px-0" data-bs-toggle="tab" href="javascript:;" role="tab"
+                        aria-selected="false">
+                        <i class="material-icons text-lg position-relative">history</i>
+                        <span class="ms-1">History</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
     <div class="card my-4">
         <div class="card-body px-0 pb-2">
             <div class="table-responsive">
