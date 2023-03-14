@@ -1,5 +1,56 @@
 @extends('admin.layouts.dashboard')
 
+@section('sidebar')
+<div class="collapse navbar-collapse ms-md-auto w-auto mt-5" id="sidenav-collapse-main">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link text-white active bg-info" href="/admin">
+                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i class="material-icons opacity-10">dashboard</i>
+                </div>
+                <span class="nav-link-text ms-1">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="{{route('user.index')}}">
+                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i class="material-icons opacity-10">table_view</i>
+                </div>
+                <span class="nav-link-text ms-1">Users</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white " href="{{route('user.create')}}">
+                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i class="material-icons opacity-10">assignment_ind</i>
+                </div>
+                <span class="nav-link-text ms-1">Create User</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white " href="/admin/monthly">
+                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i class="material-icons opacity-10">summarize</i>
+                </div>
+                <span class="nav-link-text ms-1">Monthly Report</span>
+            </a>
+        </li>
+        <li class="nav-item mt-3">
+            <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages
+            </h6>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white " href="/admin/profile">
+                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i class="material-icons opacity-10">person</i>
+                </div>
+                <span class="nav-link-text ms-1">Profile</span>
+            </a>
+        </li>
+    </ul>
+</div>
+@endsection
+
 @section('content')
 <div class="col-12">
     <div class="col-md-4 my-sm-auto me-sm-0">
@@ -58,132 +109,6 @@
                             </td>
                             <td class="align-middle text-center">
                                 <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
-                            </td>
-                            <td class="align-middle">
-                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                    data-toggle="tooltip" data-original-title="Edit user">
-                                    Edit
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="d-flex px-2 py-1">
-                                    <div class="d-flex flex-column justify-content-center">
-                                        <h6 class="mb-0 text-sm">Alexa Liras</h6>
-                                        <p class="text-xs text-secondary mb-0">alexa@creative-tim.com
-                                        </p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="text-xs font-weight-bold mb-0">Programator</p>
-                            </td>
-                            <td class="align-middle text-center text-sm">
-                                <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-                            </td>
-                            <td class="align-middle text-center">
-                                <span class="text-secondary text-xs font-weight-bold">11/01/19</span>
-                            </td>
-                            <td class="align-middle">
-                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                    data-toggle="tooltip" data-original-title="Edit user">
-                                    Edit
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="d-flex px-2 py-1">
-                                    <div class="d-flex flex-column justify-content-center">
-                                        <h6 class="mb-0 text-sm">Laurent Perrier</h6>
-                                        <p class="text-xs text-secondary mb-0">laurent@creative-tim.com
-                                        </p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="text-xs font-weight-bold mb-0">Executive</p>
-                            </td>
-                            <td class="align-middle text-center text-sm">
-                                <span class="badge badge-sm bg-gradient-success">Online</span>
-                            </td>
-                            <td class="align-middle text-center">
-                                <span class="text-secondary text-xs font-weight-bold">19/09/17</span>
-                            </td>
-                            <td class="align-middle">
-                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                    data-toggle="tooltip" data-original-title="Edit user">
-                                    Edit
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="d-flex px-2 py-1">
-                                    <div class="d-flex flex-column justify-content-center">
-                                        <h6 class="mb-0 text-sm">Michael Levi</h6>
-                                        <p class="text-xs text-secondary mb-0">michael@creative-tim.com
-                                        </p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="text-xs font-weight-bold mb-0">Programator</p>
-                            </td>
-                            <td class="align-middle text-center text-sm">
-                                <span class="badge badge-sm bg-gradient-success">Online</span>
-                            </td>
-                            <td class="align-middle text-center">
-                                <span class="text-secondary text-xs font-weight-bold">24/12/08</span>
-                            </td>
-                            <td class="align-middle">
-                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                    data-toggle="tooltip" data-original-title="Edit user">
-                                    Edit
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="d-flex px-2 py-1">
-                                    <h6 class="mb-0 text-sm">Richard Gran</h6>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="text-xs font-weight-bold mb-0">Manager</p>
-                            </td>
-                            <td class="align-middle text-center text-sm">
-                                <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-                            </td>
-                            <td class="align-middle text-center">
-                                <span class="text-secondary text-xs font-weight-bold">04/10/21</span>
-                            </td>
-                            <td class="align-middle">
-                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                    data-toggle="tooltip" data-original-title="Edit user">
-                                    Edit
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="d-flex px-2 py-1">
-                                    <div class="d-flex flex-column justify-content-center">
-                                        <h6 class="mb-0 text-sm">Miriam Eric</h6>
-                                        <p class="text-xs text-secondary mb-0">miriam@creative-tim.com
-                                        </p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="text-xs font-weight-bold mb-0">Programator</p>
-                            </td>
-                            <td class="align-middle text-center text-sm">
-                                <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-                            </td>
-                            <td class="align-middle text-center">
-                                <span class="text-secondary text-xs font-weight-bold">14/09/20</span>
                             </td>
                             <td class="align-middle">
                                 <a href="javascript:;" class="text-secondary font-weight-bold text-xs"

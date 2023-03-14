@@ -29,7 +29,7 @@
             <p class="mx-5 font-weight-bolder align-self-center">Weclome</p>
             <p class="text-secondary">Please Choose According To Your Level</p>
 
-            <a type="button" href="/admin" class="btn btn-primary btn-lg btn-block">
+            <a type="button" href="/admin/dashboard" class="btn btn-primary btn-lg btn-block">
                 <span>I'M Admin</span>
             </a>
             <a type="button" href="/guru" class="btn btn-secondary btn-lg btn-block">
