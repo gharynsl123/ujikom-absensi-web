@@ -62,7 +62,8 @@ class UserStaffController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('admin.editstaff', compact('user'));
     }
 
     /**

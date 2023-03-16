@@ -14,11 +14,12 @@
 Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 
-Route::resource('/admin', 'AdminController');
+Route::resource('/dashboard', 'DashboardController');
+Route::get('/absen', 'DashboardController@create');
 Route::resource('/user', 'UserStaffController');
 
 Route::get('/guru', 'GuruController@index');

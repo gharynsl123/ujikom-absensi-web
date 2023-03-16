@@ -11,6 +11,15 @@
     <link rel="stylesheet" type="text/css"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
 
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js"></script>
 
@@ -39,10 +48,10 @@
     <main class="main-content position-relative max-height-vh-100 border-radius-lg">
 
         <!-- Navbar -->
-        @include('admin.layouts.navbar')
+        @include('layouts.app')
         <!-- End Navbar -->
 
-        <div class="container-fluid py-4">
+        <div class="container-fluid">
             <div class="row">
                 @yield('content')
             </div>
