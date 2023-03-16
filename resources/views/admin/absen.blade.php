@@ -21,7 +21,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white active bg-info" href="{{route('user.create')}}">
+            <a class="nav-link text-white" href="{{route('user.create')}}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">assignment_ind</i>
                 </div>
@@ -41,7 +41,7 @@
             </h6>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white " href="/absen">
+            <a class="nav-link text-white active bg-info" href="/absen">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">pending_actions</i>
                 </div>
