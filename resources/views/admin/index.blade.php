@@ -5,7 +5,7 @@
 <div class="collapse navbar-collapse ms-md-auto w-auto mt-5" id="sidenav-collapse-main">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link text-white active bg-info" href="/dashboard">
+            <a class="nav-link text-white active bg-info" href="/home">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">dashboard</i>
                 </div>

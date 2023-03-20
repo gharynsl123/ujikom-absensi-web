@@ -24,7 +24,7 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js"></script>
 
     <!-- bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
@@ -79,19 +79,23 @@
     </main>
 </body>
 <!-- bootstrap js -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
+</script>
 <script>
 $(document).ready(function {
     $('#myTable').DataTable();
 });
 </script>
 <!--   Core JS Files   -->
-<script src="{{asset('template/js/core/popper.min.js')}}"></script>
-<script src="{{asset('template/js/core/bootstrap.min.js')}}"></script>
+<!-- <script src="{{asset('template/js/core/popper.min.js')}}"></script> -->
+<!-- <script src="{{asset('template/js/core/bootstrap.min.js')}}"></script> -->
 <script src="{{asset('template/js/plugins/perfect-scrollbar.min.js')}}"></script>
-<script src="{{asset('template/js/plugins/smooth-scrollbar.min.js')}}"></script>
-<script src="{{asset('template/js/plugins/chartjs.min.js')}}"></script>
+<!-- <script src="{{asset('template/js/plugins/smooth-scrollbar.min.js')}}"></script> -->
+<!-- <script src="{{asset('template/js/plugins/chartjs.min.js')}}"></script> -->
 
 <!-- Github buttons -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>

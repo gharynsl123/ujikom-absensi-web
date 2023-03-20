@@ -13,13 +13,13 @@
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/' ,'DashboardController@index');
+Route::get('/home', 'DashboardController@index')->name('home');
 
-
-Route::resource('/dashboard', 'DashboardController');
 Route::get('/absen', 'DashboardController@create');
 Route::resource('/user', 'UserStaffController');
 
 Route::get('/guru', 'GuruController@index');
+
+Auth::routes();
+
