@@ -13,12 +13,10 @@
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/' ,'DashboardController@index');
+Route::get('/home', 'DashboardController@index')->name('home');
 
-
-Route::resource('/admin', 'AdminController');
+Route::get('/absen', 'DashboardController@create');
 Route::resource('/user', 'UserStaffController');
 
 Route::get('/guru', 'GuruController@index');

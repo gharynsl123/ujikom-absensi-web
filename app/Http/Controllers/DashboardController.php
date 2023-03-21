@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -12,10 +12,11 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+ 
     
     public function index()
     {
@@ -29,7 +30,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view ('admin.absen');
     }
 
     /**
@@ -40,7 +41,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
     }
 
     /**
