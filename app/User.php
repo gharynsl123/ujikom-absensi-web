@@ -10,6 +10,38 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $fillable = [
+        'name', 'email', 'password', 'level',
+    ];
+
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+    public function isAdmin()
+    {
+        return $this->level === 'admin';
+    }
+
+    public function isGuru()
+    {
+        return $this->level === 'guru';
+    }
+
+    public function isKaprogdi()
+    {
+        return $this->level === 'kaprogdi';
+    }
+
+    public function isSiswa()
+    {
+        return $this->level === 'siswa';
+    }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,16 +54,16 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    // protected $hidden = [
+    //     'password', 'remember_token',
+    // ];
 
     /**
      * The attributes that should be cast to native types.
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+//     protected $casts = [
+//         'email_verified_at' => 'datetime',
+//     ];
 }

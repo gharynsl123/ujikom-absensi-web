@@ -1,7 +1,7 @@
 @extends('admin.layouts.tamplate')
 
 @section('sidebar')
-<div class="collapse navbar-collapse ms-md-auto w-auto mt-5" id="sidenav-collapse-main">
+<div class="collapse navbar-collapse h-auto ms-md-auto w-auto mt-5" id="sidenav-collapse-main">
     <ul class="navbar-nav">
         <li class="nav-item">
             <a class="nav-link text-white" href="/home">
@@ -134,16 +134,40 @@
             </div>
         </div>
         <div class="card-body pt-4 p-3">
-            <h6 class="text-uppercase text-body text-xs font-weight-bolder mb-3">Grade</h6>
-            <form action="#" method="post">
-                <input class="form-control form-control-lg border border-info" type="text" placeholder="Tambah Data">
+            <h6 class="text-uppercase text-body text-xs font-weight-bolder mb-3">Grade / Major</h6>
+            <form action="{{route('user.store')}}" method="post">
+                @csrf
+                <input class="form-control form-control-lg border border-info" type="text" placeholder="Tambah Data"
+                    value="" name="class">
                 <button type="submit" class="btn btn-success mt-3 col-md-4">Buat</button>
             </form>
-            <h6 class="text-uppercase text-body text-xs font-weight-bolder my-3">Major</h6>
-            <form action="#" method="post">
-                <input class="form-control form-control-lg border border-info" type="text" placeholder="Tambah Data">
-                <button type="submit" class="btn btn-success mt-3 col-md-4">Buat</button>
-            </form>
+        </div>
+    </div>
+    <div class="card h-auto mb-4">
+        <div class="card-body mt-3 pt-4 p-3 table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td class="h6">Nama</td>
+                        <td class="h6">Action</td>
+                    </tr>
+                </thead>
+                @foreach($kelas as $row)
+                <tbody>
+                    <tr>
+                        <td>{{$row->class}}</td>
+                        <td>
+                            <form action="{{route('user.destroy', $row->id)}}" method="post">
+                                @csrf
+                                {{method_field('DELETE')}}
+                                <button type="submit" class="btn btn-link text-danger text-gradient mb-0 p-0 " data-bs-toggle="tooltip"
+                                    data-bs-placement="top" data-bs-title="Delete"><i
+                                        class="material-icons text-sm">delete</i></button></td>
+                            </form>
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
         </div>
     </div>
 </div>

@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Kelas;
 
 class UserStaffController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +34,8 @@ class UserStaffController extends Controller
      */
     public function create()
     {
-        return view ('admin.createstaff');
+        $kelas = Kelas::all();
+        return view('admin.createstaff', compact('kelas'));
     }
 
     /**
@@ -40,7 +46,8 @@ class UserStaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Kelas::create($request->all());
+        return back();
     }
 
     /**
@@ -86,6 +93,8 @@ class UserStaffController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Kelas::find($id);
+        $data->delete();
+        return back();
     }
 }
