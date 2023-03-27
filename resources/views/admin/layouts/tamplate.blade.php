@@ -41,6 +41,7 @@
 </head>
 
 <body class="g-sidenav-show bg-body">
+    
     <aside class="sidenav navbar navbar-vertical navbar-expand-xs rounded-lg fixed-start m-2 bg-color"
         id="sidenav-main">
         @yield('sidebar')

@@ -609,7 +609,7 @@ function toggleSidenav() {
 
     } else {
         body.classList.add(className);
-        sidenav.classList.add('bg-white');
+        sidenav.classList.add('bg-info');
         sidenav.classList.remove('bg-transparent');
         iconSidenav.classList.remove('d-none');
     }

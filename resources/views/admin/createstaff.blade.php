@@ -70,59 +70,57 @@
             <h6 class="mb-0">Make User Staff</h6>
         </div>
         <div class="card-body pt-4 p-3">
-            <ul class="list-group">
-                <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
-                    <div class="d-flex flex-column">
-                        <h6 class="mb-3 text-sm">Oliver Liam</h6>
-                        <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Viking
-                                Burrito</span></span>
-                        <span class="mb-2 text-xs">Email Address: <span
-                                class="text-dark ms-sm-2 font-weight-bold">oliver@burrito.com</span></span>
-                        <span class="text-xs">VAT Number: <span
-                                class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
+            <form action="#" method="post">
+                @csrf
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mt-4 d-flex align-items-center">
+                            <div class="input-group input-group-outline">
+                                <label class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
                     </div>
-                    <div class="ms-auto text-end">
-                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                class="material-icons text-sm me-2">delete</i>Delete</a>
-                        <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                class="material-icons text-sm me-2">edit</i>Edit</a>
+                    <div class="col-md-6">
+                        <div class=" mt-4 d-flex align-items-center">
+                            <div class="input-group input-group-outline">
+                                <label class="form-label">lavel</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
                     </div>
-                </li>
-                <li class="list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg">
-                    <div class="d-flex flex-column">
-                        <h6 class="mb-3 text-sm">Lucas Harper</h6>
-                        <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Stone
-                                Tech Zone</span></span>
-                        <span class="mb-2 text-xs">Email Address: <span
-                                class="text-dark ms-sm-2 font-weight-bold">lucas@stone-tech.com</span></span>
-                        <span class="text-xs">VAT Number: <span
-                                class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
+                    <div class="col-md-6">
+                        <div class=" mt-4 d-flex align-items-center">
+                            <div class="input-group input-group-outline">
+                                <label class="form-label">Email</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
                     </div>
-                    <div class="ms-auto text-end">
-                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                class="material-icons text-sm me-2">delete</i>Delete</a>
-                        <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                class="material-icons text-sm me-2">edit</i>Edit</a>
+                    <div class="col-md-6">
+                        <div class=" mt-4 d-flex align-items-center">
+                            <div class="input-group input-group-outline">
+                                <label class="form-label">class</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
                     </div>
-                </li>
-                <li class="list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg">
-                    <div class="d-flex flex-column">
-                        <h6 class="mb-3 text-sm">Ethan James</h6>
-                        <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Fiber
-                                Notion</span></span>
-                        <span class="mb-2 text-xs">Email Address: <span
-                                class="text-dark ms-sm-2 font-weight-bold">ethan@fiber.com</span></span>
-                        <span class="text-xs">VAT Number: <span
-                                class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
+
+                    <div class="col-md-12">
+                        <div class=" mt-4 d-flex mb-5 align-items-center">
+                            <div class="input-group input-group-outline">
+                                <label class="form-label">password</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
                     </div>
-                    <div class="ms-auto text-end">
-                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                class="material-icons text-sm me-2">delete</i>Delete</a>
-                        <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                class="material-icons text-sm me-2">edit</i>Edit</a>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Tambah Data</button>
+                        </div>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </form>
         </div>
     </div>
 </div>
