@@ -2,7 +2,7 @@
 
 @section('sidebar')
 
-<div class="collapse navbar-collapse ms-md-auto w-auto mt-5" id="sidenav-collapse-main">
+<div class="collapse h-auto navbar-collapse ms-md-auto w-auto mt-5" id="sidenav-collapse-main">
     <ul class="navbar-nav">
         <li class="nav-item">
             <a class="nav-link text-white" href="/home">
