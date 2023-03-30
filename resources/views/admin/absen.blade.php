@@ -73,7 +73,7 @@
                     <h6 class="mb-0 text-white">Notification</h6>
                 </div>
                 <div class="col-6 text-end">
-                    <a class="btn bg-warning text-white mb-0" href="javascript:;"><i
+                    <a class="btn bg-warning text-white mb-0" href="/absen/izin"><i
                             class="material-icons text-white text-sm">add</i>&nbsp;&nbsp;Ajukan perizinan</a>
                 </div>
             </div>

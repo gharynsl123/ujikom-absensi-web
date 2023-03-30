@@ -22,6 +22,8 @@ Auth::routes();
 
         Route::get('/guru', 'GuruController@index');
         Route::get('/kaprodi', 'KaprodiController@index');
+
+        Route::get('/absen/izin', 'IzinController@index');
     });
 
     // Route::middleware(['checkRole:guru'])->group(function () {
