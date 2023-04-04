@@ -70,7 +70,7 @@
             <h6 class="mb-0">Make User Staff</h6>
         </div>
         <div class="card-body pt-4 p-3">
-            <form action="#" method="post">
+            <form action="" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-md-6">

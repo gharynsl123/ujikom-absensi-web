@@ -25,9 +25,9 @@ class CheckUserRole
             return redirect('/login');
         }
 
-        // if (!$user->{"is{$level}"}()) {
-        //     abort(403, 'Unauthorized action.');
-        // }
+        if (!$user->{"is{$level}"}()) {
+            abort(403, 'Unauthorized action.');
+        }
 
         return $next($request);
     }

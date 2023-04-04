@@ -15,6 +15,7 @@ Auth::routes();
 
     Route::middleware(['checkRole:admin'])->group(function () {
         Route::resource('/user', 'UserStaffController');
+
         Route::get('/' ,'DashboardController@index');
         Route::get('/home', 'DashboardController@index')->name('home');
     
@@ -23,7 +24,7 @@ Auth::routes();
         Route::get('/guru', 'GuruController@index');
         Route::get('/kaprodi', 'KaprodiController@index');
 
-        Route::get('/absen/izin', 'IzinController@index');
+        Route::resource('izin', 'IzinController');
     });
 
     // Route::middleware(['checkRole:guru'])->group(function () {
@@ -36,12 +37,6 @@ Auth::routes();
 
 
 
-    // Route::middleware(['checkRole:siswa'])->group(function () {
-    //     Route::get('/' ,'DashboardController@index');
-    //     Route::get('/home', 'DashboardController@index')->name('home');
-    
-    //     Route::get('/absen', 'DashboardController@create');
-
-    //     Route::get('/guru', 'GuruController@index');
-    //     Route::get('/kaprodi', 'KaprodiController@index');
-    // });
+    Route::middleware(['checkRole:siswa'])->group(function () {
+        Route::get('/absen', 'DashboardController@create');
+    });
