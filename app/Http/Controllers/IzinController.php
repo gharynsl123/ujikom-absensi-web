@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Kelas;
+use App\Izin;
 
-class UserStaffController extends Controller
+class IzinController extends Controller
 {
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('auth');
     }
     /**
@@ -16,10 +15,9 @@ class UserStaffController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
     public function index()
     {
-        return view ('admin.userstaff');
+        return view('admin.izin');
     }
 
     /**
@@ -29,8 +27,7 @@ class UserStaffController extends Controller
      */
     public function create()
     {
-        $kelas = Kelas::all();
-        return view('admin.createstaff', compact('kelas'));
+        //
     }
 
     /**
@@ -41,7 +38,7 @@ class UserStaffController extends Controller
      */
     public function store(Request $request)
     {
-        Kelas::create($request->all());
+        Izin::create($request -> all());
         return back();
     }
 
@@ -64,8 +61,7 @@ class UserStaffController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('admin.editstaff', compact('user'));
+        //
     }
 
     /**
@@ -88,8 +84,8 @@ class UserStaffController extends Controller
      */
     public function destroy($id)
     {
-        $data = Kelas::find($id);
-        $data->delete();
+        $data = Izin::find($id);
+        $data -> delete();
         return back();
     }
 }
