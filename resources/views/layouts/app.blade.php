@@ -55,15 +55,8 @@
                                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
-<<<<<<< HEAD
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-=======
-                            
-                            <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> -->
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
->>>>>>> f59657fe5f3c5719888367cc7a13ec63ea8caa3b
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
