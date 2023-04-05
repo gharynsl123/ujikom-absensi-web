@@ -69,7 +69,7 @@
                         </div>
                     </li>
 
-                    <li class="nav-item ms-4">
+                    <li class="nav-item ms-4 d-flex align-items-center">
                         <i type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
                             aria-controls="offcanvasScrolling" class="fa fa-bars"></i>
                     </li>

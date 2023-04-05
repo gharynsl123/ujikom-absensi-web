@@ -55,7 +55,7 @@
             <span class="material-icons-round">
                 approval
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/izin">
                 Ajukan Izin</a>
         </div>
     </li>
@@ -69,7 +69,7 @@
             <span class="material-icons-round">
                 person
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/profile">
                 Profile</a>
         </div>
     </li>

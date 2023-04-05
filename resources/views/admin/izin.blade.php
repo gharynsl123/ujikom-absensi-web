@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -7,16 +7,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="colorlib.com">
 
-    <!-- MATERIAL DESIGN ICONIC FONT -->
+
     <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
 
-    <!-- STYLE CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="{{asset('css/style.css')}}"> -->
+
 </head>
 
 <body>
-    <div class="col-md-8 m-auto my-5">
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+
+    <script src="js/jquery.steps.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html> -->
+
+@extends('admin.layouts.mainview')
+
+@section('sidebar')
+<ul class="nav nav-pills d-flex row">
+    <li class="nav-item my-3">
+        <div class="nav-link fw-light text-white d-flex align-item-center">
+            <span class="material-icons-round">
+                dashboard
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/home">Dashboard</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="nav-link d-flex fw-light text-white align-item-center">
+            <span class="material-icons-round">
+                table_view
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('user.index')}}">User</a>
+        </div>
+    </li>
+    <li class="nav-item my-3">
+        <div class="nav-link d-flex fw-light text-white align-item-center">
+            <span class="material-icons-round">
+                assignment_ind
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('user.create')}}">Create
+                User</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="nav-link d-flex fw-light text-white align-item-center">
+            <span class="material-icons-round">
+                summarize
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">Mouthly
+                Report</a>
+        </div>
+    </li>
+    <li class="nav-item mt-3 ms-3 ">
+        <p class="text-uppercase opacity-50 fw-bolder text-white" disabled>
+            <b>Absensi Siswa</b>
+        </p>
+    </li>
+    <li class="nav-item">
+        <div class="nav-link d-flex fw-light text-white align-item-center">
+            <span class="material-icons-round">
+                pending_actions
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/absen">
+                Absen</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="nav-link active d-flex fw-light text-white align-item-center">
+            <span class="material-icons-round">
+                approval
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/izin">
+                Ajukan Izin</a>
+        </div>
+    </li>
+    <li class="nav-item mt-4 ms-3 ">
+        <p class="text-uppercase opacity-50 fw-bolder text-white" disabled>
+            <b>Account Page</b>
+        </p>
+    </li>
+    <li class="nav-item">
+        <div class="nav-link d-flex fw-light text-white align-item-center">
+            <span class="material-icons-round">
+                person
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/profile">
+                Profile</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="nav-link d-flex fw-light text-white align-item-center">
+            <span class="material-icons-round">
+                settings
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">
+                setting</a>
+        </div>
+    </li>
+</ul>
+@endsection
+
+@section('content')
+<div class="col-md-8 m-auto my-5">
         <div class="card h-auto">
             <div class="card-header px-3">
                 <h6 class="mb-0 p-3">Buat Perizinan</h6>
@@ -51,7 +152,7 @@
                         </div>
                         <div class="col-md-2"></div>
                         <div class="col-md-10">
-                            <!-- <label for="formFile" class="form-label">Default file input example</label> -->
+                             <label for="formFile" class="form-label">Default file input example</label> 
                             <input class="form-control" required type="file" id="formFile" style="height: 100px;" name="bukti_foto">
                             <div id="passwordHelpBlock" class="form-text">
                                 Kirim bukti keterangan
@@ -69,15 +170,4 @@
             </div>
         </div>
     </div>
-
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-
-    <!-- JQUERY STEP -->
-    <script src="js/jquery.steps.js"></script>
-
-    <script src="js/main.js"></script>
-    <!-- Template created and distributed by Colorlib -->
-</body>
-
-</html>
+@endsection

@@ -42,7 +42,7 @@
         </p>
     </li>
     <li class="nav-item">
-        <div class="nav-link d-flex active fw-light text-white align-item-center">
+        <div class="nav-link d-flex fw-light text-white align-item-center">
             <span class="material-icons-round">
                 pending_actions
             </span>
@@ -65,11 +65,11 @@
         </p>
     </li>
     <li class="nav-item">
-        <div class="nav-link d-flex fw-light text-white align-item-center">
+        <div class="nav-link active d-flex fw-light text-white align-item-center">
             <span class="material-icons-round">
                 person
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/profile">
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">
                 Profile</a>
         </div>
     </li>
@@ -86,59 +86,76 @@
 @endsection
 
 @section('content')
-<div class="mx-4 mt-4 my-0">
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-            <path
-                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-        </symbol>
-    </svg>
-    <div class="alert alert-warning d-flex align-items-center" role="alert">
-        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
-            <use xlink:href="#exclamation-triangle-fill" />
-        </svg>
-        <div>
-            Hei Kamu Belum Absen Hari ini
-        </div>
-    </div>
-</div>
-<div class="container-fuild m-0 d-flex justify-content-center row">
-    <div class="mt-4" style="width: 35rem;">
-        <div class="rounded-3 bg-white shadow-lg">
-            <div class="p-3">
-                <p></p>
-                <div class="mb-4">
-                    <p class="mb-0 text-uppercase fw-bold">Name</p>
-                    <h6 class="text-capitalize text-secondary">diana putri salsabila</h6>
-                </div>
-                <div>
-                    <p class="mb-0 text-uppercase fw-bold">Waktu</p>
-                    <h6 class="text-secondary">12:07 10/01/2023</h6>
-                </div>
+<div class="container">
+    <div class="d-flex gap-4 h-auto justify-content-center row">
+        <img src="smk cikoko.png"  class="rounded-circle col-md-3 img-thumbnail">
+        <div class="card col-md-8 p-3">
+            <p class="fw-bolder m-0">Your Identiti Card</p>
+            <hr>
+            <div class="table-responsive">
+                <table class="table table-borderless">
+                    <tr class="text-capitalize">
+                        <td>Nama</td>
+                        <td>:</td>
+                        <td>Adinda</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td>Adindamasni@gmail.com</td>
+                    </tr>
+                    <tr class="text-capitalize">
+                        <td>kelas</td>
+                        <td>:</td>
+                        <td>11 rpl b</td>
+                    </tr>
+                </table>
             </div>
-            <div class="d-flex align-item-end justify-content-end">
-                <p class="m-2 badge text-bg-success">masuk</p>
+            <div class="d-flex mt-auto">
+                <button type="button" class="btn btn-success">Edit Bio</button>
+                <button type="button" class="btn btn-warning ms-2">Setting</button>
             </div>
         </div>
     </div>
-    <div class="mt-4" style="width: 35rem;">
-        <div class="rounded-3 bg-white shadow-lg">
-            <div class="p-3">
-                <p></p>
-                <div class="mb-4">
-                    <p class="mb-0 text-uppercase fw-bold">Name</p>
-                    <h6 class="text-capitalize text-secondary">diana putri salsabila</h6>
-                </div>
-                <div>
-                    <p class="mb-0 text-uppercase fw-bold">Waktu</p>
-                    <h6 class="text-secondary">12:07 10/01/2023</h6>
-                </div>
-            </div>
-            <div class="d-flex align-item-end justify-content-end">
-                <p class="m-2 badge text-bg-danger">Keluar</p>
-            </div>
-        </div>
-    </div>
-</div>
 
+    <p class="fw-bold fs-3 mt-5">Absen Kamu</p>
+
+    <div class="table-responsiven bg-white rounded-3 shadow-lg">
+        <table class="table table-hover align-items-center m-0">
+            <thead class="table-primary">
+                <tr>
+                    <th class="text-uppercase text-secondary ps-3">
+                        Name</th>
+                    <th class="text-uppercase text-secondary ps-2">
+                        NISN</th>
+                    <th class="text-center text-uppercase text-secondary">
+                        Status</th>
+                    <th class="text-center text-uppercase text-secondary">
+                        Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="d-flex px-2 py-3">
+                            <div class="d-flex flex-column justify-content-center">
+                                <h6 class="text-sm">John Michael</h6>
+                                <p class="text-secondary mb-0">john@creative-tim.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="align-middle ">
+                        <p class="mb-0">08127634</p>
+                    </td>
+                    <td class="align-middle text-center mb-0 py-4 px-0 text-sm">
+                        <span class="badge bg-success mb-0 px-2">Hadir</span>
+                    </td>
+                    <td class="align-middle text-center mb-0 px-0 py-4">
+                        <span class="text-secondary">23/04/18</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 @endsection
