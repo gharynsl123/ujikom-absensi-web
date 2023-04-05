@@ -1,174 +1,204 @@
-@extends('admin.layouts.tamplate')
+@extends('admin.layouts.mainview')
 
 @section('sidebar')
-<div class="collapse navbar-collapse h-auto ms-md-auto w-auto mt-5" id="sidenav-collapse-main">
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link text-white" href="/home">
-                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">dashboard</i>
-                </div>
-                <span class="nav-link-text ms-1">Dashboard</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white" href="{{route('user.index')}}">
-                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">table_view</i>
-                </div>
-                <span class="nav-link-text ms-1">Users</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white active bg-info" href="{{route('user.create')}}">
-                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">assignment_ind</i>
-                </div>
-                <span class="nav-link-text ms-1">Create User</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white " href="/admin/monthly">
-                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">summarize</i>
-                </div>
-                <span class="nav-link-text ms-1">Monthly Report</span>
-            </a>
-        </li>
-        <li class="nav-item mt-3">
-            <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Absensi Siswa
-            </h6>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white " href="/absen">
-                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">pending_actions</i>
-                </div>
-                <span class="nav-link-text ms-1">Absen</span>
-            </a>
-        </li>
-        <li class="nav-item mt-3">
-            <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages
-            </h6>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white " href="/admin/profile">
-                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">person</i>
-                </div>
-                <span class="nav-link-text ms-1">Profile</span>
-            </a>
-        </li>
-    </ul>
-</div>
+<ul class="nav nav-pills d-flex row">
+    <li class="nav-item my-3">
+        <div class="nav-link fw-light text-white d-flex align-item-center">
+            <span class="material-icons-round">
+                dashboard
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">Dashboard</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="nav-link d-flex fw-light text-white align-item-center">
+            <span class="material-icons-round">
+                table_view
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="user.html">User</a>
+        </div>
+    </li>
+    <li class="nav-item my-3">
+        <div class="nav-link active d-flex fw-light text-white align-item-center">
+            <span class="material-icons-round">
+                assignment_ind
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">Create
+                User</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="nav-link d-flex fw-light text-white align-item-center">
+            <span class="material-icons-round">
+                summarize
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">Mouthly
+                Report</a>
+        </div>
+    </li>
+    <li class="nav-item mt-3 ms-3 ">
+        <p class="text-uppercase opacity-50 fw-bolder text-white" disabled>
+            <b>Absensi Siswa</b>
+        </p>
+    </li>
+    <li class="nav-item">
+        <div class="nav-link d-flex fw-light text-white align-item-center">
+            <span class="material-icons-round">
+                pending_actions
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">
+                Absen</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="nav-link d-flex fw-light text-white align-item-center">
+            <span class="material-icons-round">
+                approval
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">
+                Ajukan Izin</a>
+        </div>
+    </li>
+    <li class="nav-item mt-4 ms-3 ">
+        <p class="text-uppercase opacity-50 fw-bolder text-white" disabled>
+            <b>Account Page</b>
+        </p>
+    </li>
+    <li class="nav-item">
+        <div class="nav-link d-flex fw-light text-white align-item-center">
+            <span class="material-icons-round">
+                person
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">
+                Profile</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <div class="nav-link d-flex fw-light text-white align-item-center">
+            <span class="material-icons-round">
+                settings
+            </span>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">
+                setting</a>
+        </div>
+    </li>
+</ul>
 @endsection
 
 @section('content')
-<div class="col-md-7 mb-3">
-    <div class="card">
-        <div class="card-header pb-0 px-3">
-            <h6 class="mb-0">Make User Staff</h6>
-        </div>
-        <div class="card-body pt-4 p-3">
-            <form action="#" method="post">
-                @csrf
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="mt-4 d-flex align-items-center">
-                            <div class="input-group input-group-outline">
-                                <label class="form-label">Nama Lengkap</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class=" mt-4 d-flex align-items-center">
-                            <div class="input-group input-group-outline">
-                                <label class="form-label">lavel</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class=" mt-4 d-flex align-items-center">
-                            <div class="input-group input-group-outline">
-                                <label class="form-label">Email</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class=" mt-4 d-flex align-items-center">
-                            <div class="input-group input-group-outline">
-                                <label class="form-label">class</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12">
-                        <div class=" mt-4 d-flex mb-5 align-items-center">
-                            <div class="input-group input-group-outline">
-                                <label class="form-label">password</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success">Tambah Data</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="col-md-5 mb-3">
-    <div class="card h-auto mb-4">
-        <div class="card-header pb-0 px-3">
-            <div class="row">
-                <div class="col-md-6">
-                    <h6 class="mb-0">Make Class</h6>
+<div class="container-fluid m-0 row">
+    <div class="col-md-6 mb-3">
+        <div class="rounded-3 bg-white shadow">
+            <div class="pb-0 m-0 px-3">
+                <div class="badge mt-3 bg-dark p-2 text-wrap" style="width: 7rem;">
+                    Make Users
                 </div>
             </div>
-        </div>
-        <div class="card-body pt-4 p-3">
-            <h6 class="text-uppercase text-body text-xs font-weight-bolder mb-3">Grade / Major</h6>
-            <form action="{{route('user.store')}}" method="post">
-                @csrf
-                <input class="form-control form-control-lg border border-info" type="text" placeholder="Tambah Data"
-                    value="" name="class">
-                <button type="submit" class="btn btn-success mt-3 col-md-4">Buat</button>
-            </form>
+            <div class="mt-1 px-3 pb-3">
+                <form action="#" method="post">
+
+                    <div class="row">
+                        <div class="input-group my-4">
+                            <span class="input-group-text" id="basic-addon1">Nama Lengkap</span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">Alamat E-mail</span>
+                            <input type="email" class="form-control" placeholder="mail" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="col-md-6 my-4">
+                            <div class="input-group">
+                                <label class="input-group-text" for="inputGroupSelect01">Class</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected>Choose...</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-4">
+                            <div class="input-group">
+                                <label class="input-group-text" for="inputGroupSelect01">Lavel</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected>Choose...</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mb-5">
+                            <div class="input-group ">
+                                <span class="input-group-text" id="basic-addon1">password</span>
+                                <input type="text" class="form-control" placeholder="°°°°" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="form-control btn btn-success">Tambah Data</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-    <div class="card h-auto mb-4">
-        <div class="card-body mt-3 pt-4 p-3 table">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <td class="h6">Nama</td>
-                        <td class="h6">Action</td>
-                    </tr>
-                </thead>
-                @foreach($kelas as $row)
-                <tbody>
-                    <tr>
-                        <td>{{$row->class}}</td>
-                        <td>
-                            <form action="{{route('user.destroy', $row->id)}}" method="post">
-                                @csrf
-                                {{method_field('DELETE')}}
-                                <button type="submit" class="btn btn-link text-danger text-gradient mb-0 p-0 " data-bs-toggle="tooltip"
-                                    data-bs-placement="top" data-bs-title="Delete"><i
-                                        class="material-icons text-sm">delete</i></button></td>
+    <div class="col-md-6 mb-3">
+        <div class="rounded-3 bg-white shadow">
+            <div class="pb-0 m-0 px-3">
+                <div class="badge mt-3 bg-dark p-2 text-wrap" style="width: 7rem;">
+                    Make Class
+                </div>
+            </div>
+            <div class="mt-1 px-3 pb-3">
+                <form action="#" method="post">
+                    <div class="row">
+                        <div class="input-group my-4">
+                            <span class="input-group-text" id="basic-addon1">Buat Kelas</span>
+                            <input type="text" class="form-control " placeholder="kelas.." aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="col-md-6">
+                            <button type="submit" class="form-control btn btn-success">Tambah Data</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="rounded-3 bg-white mt-3 h-auto shadow">
+            <div class="table-responsive">
+
+                <table class="table table-hover m-0">
+                    <thead>
+                        <tr>
+                            <td class="h6">Nama</td>
+                            <td class="h6">Action</td>
+                        </tr>
+                    </thead>
+                    <!-- @foreach($kelas as $row) -->
+                    <tbody>
+                        <tr>
+                            <td>test tototo</td>
+                            <td>
+                                <!-- <form action="{{route('user.destroy', $row->id)}}" method="post">
+                                        @csrf
+                                        {{method_field('DELETE')}}
+                                        <button type="submit" class="btn btn-link text-danger text-gradient mb-0 p-0 "
+                                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete"><i
+                                                class="material-icons text-sm">delete</i></button> -->
+                                kjhguiuyuiokjh
+                            </td>
                             </form>
-                    </tr>
-                </tbody>
-                @endforeach
-            </table>
+                        </tr>
+                    </tbody>
+                    <!-- @endforeach -->
+                </table>
+            </div>
         </div>
     </div>
+
 </div>
 @endsection

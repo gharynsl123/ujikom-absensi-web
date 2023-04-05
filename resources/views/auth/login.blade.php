@@ -1,72 +1,44 @@
 @extends('layouts.app')
 
 @section('auth')
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-md-5">
-            <img src="{{ asset('image/absensi.jpeg') }}"  style="width: 100%;">
-        </div>
-        <div class="col-md-7">
-            <div class="card p-5 mt-3">
-                <div class="card-body ">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label ">{{ __('E-Mail Address') }}</label>
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control p-2 border border-dark @error('email') is-invalid @enderror" name="email" required autofocus>
-                                
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
+<div class="d-flex container justify-content-center mt-5">
+    <div class="card col-md-8 p-4">
+        <form action="{{ route('login')}}" method="post">
+            @csrf
+            <p class="text-center fs-4 fw-bolder m-0">Are you our Staff</p>
+            <p class="text-secondary text-center">If your a Student please <span><a href="{{ route('register') }}"
+                        class="text-decoration-none text-primary">Resgiter</a></span> First</p>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label">{{ __('Password') }}</label>
+            <p class="fw-light m-0 mt-4 text-secondary">Email</p>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">
+                    <span class="material-icons-round ">
+                        email
+                    </span>
+                </span>
+                <input required type="email" name="email" id="email" class="form-control"
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control p-2 border border-dark @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
-        </div>
+
+            <p class="fw-light m-0  text-secondary">Password</p>
+            <div class="input-group mb-2">
+                <span class="input-group-text" id="inputGroup-sizing-default">
+                    <span class="material-icons-round ">
+                        password
+                    </span>
+                </span>
+                <input id="password" name="password" autocomplete="current-password" required type="password"
+                    class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <button type="submit" class="btn btn-success mt-3">Login</button>
+
+        </form>
     </div>
 </div>
 @endsection

@@ -1,78 +1,69 @@
 @extends('layouts.app')
 
 @section('auth')
-<div class="container mt-4 shadow-lg">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<div class="d-flex container justify-content-center mt-5">
+    <div class="card col-md-8 p-4">
+        <p class="text-center fs-4 fw-bolder m-0">Make Your Account</p>
+        <p class="fw-light m-0 mt-4 text-secondary">Your Name</p>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-
-                                <input id="name" type="text" class="form-control p-2 border border-dark @error('name') is-invalid @enderror" name="name" required autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control p-2 border border-dark @error('email') is-invalid @enderror" name="email" required autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control p-2 border border-dark @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" required autofocus>
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control p-2 border border-dark @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password" required autofocus>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">
+                    <span class="material-icons-round ">
+                        person
+                    </span>
+                </span>
+                <input name="name" required id="name" type="text" class="form-control"
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
-        </div>
+
+            <p class="fw-light m-0 text-secondary">Email</p>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">
+                    <span class="material-icons-round ">
+                        email
+                    </span>
+                </span>
+                <input required id="email" type="email" class="form-control" aria-label="Sizing example input"
+                    name="email" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <p class="fw-light m-0  text-secondary">Password</p>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">
+                    <span class="material-icons-round ">
+                        password
+                    </span>
+                </span>
+                <input name="password" id="password" type="password" class="form-control"
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required
+                    autocomplete="new-password" required>
+
+                @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+            <p class="fw-light m-0  text-secondary">Confirm Password</p>
+            <div class="input-group mb-2">
+                <span class="input-group-text" id="inputGroup-sizing-default">
+                    <span class="material-icons-round ">
+                        password
+                    </span>
+                </span>
+                <input id="password-confirm" type="password" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" name="password_confirmation" required autocomplete="new-password" required>
+            </div>
+
+            <button type="submit" class="btn btn-success mt-3">Register</button>
+
+            <p class="mt-4">Are you a staff. please <span><a href="{{ route('login') }}" class="text-decoration-none text-primary">login</a></span></p>
+
+        </form>
+
     </div>
 </div>
 @endsection
