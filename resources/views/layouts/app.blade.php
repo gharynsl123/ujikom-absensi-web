@@ -31,7 +31,7 @@
 
 <body style="background-color:#F4FAFF;">
     <div id="app">
-        <nav class="navbar navbar-main navbar-expand-lg m-2 px-4 rounded shadow bg-body-tertiary">
+        <nav class="navbar navbar-main navbar-expand-lg m-2 px-4 mb-5  rounded shadow bg-body-tertiary">
             <div class="container-fluid collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                 <a class="navbar-brand" href="#">Hidden brand</a>
                 <ul class="nav">

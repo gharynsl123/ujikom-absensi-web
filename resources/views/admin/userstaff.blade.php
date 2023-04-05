@@ -7,7 +7,7 @@
             <span class="material-icons-round">
                 dashboard
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">Dashboard</a>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/home">Dashboard</a>
         </div>
     </li>
     <li class="nav-item">
@@ -15,7 +15,7 @@
             <span class="material-icons-round">
                 table_view
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="user.html">User</a>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('user.index')}}">User</a>
         </div>
     </li>
     <li class="nav-item my-3">
@@ -23,7 +23,7 @@
             <span class="material-icons-round">
                 assignment_ind
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">Create
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('user.create')}}" >Create
                 User</a>
         </div>
     </li>
@@ -46,7 +46,7 @@
             <span class="material-icons-round">
                 pending_actions
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/absen">
                 Absen</a>
         </div>
     </li>

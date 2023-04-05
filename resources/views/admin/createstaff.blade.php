@@ -178,23 +178,23 @@
                             <td class="h6">Action</td>
                         </tr>
                     </thead>
-                    <!-- @foreach($kelas as $row) -->
+                    @foreach($kelas as $row)
                     <tbody>
                         <tr>
-                            <td>test tototo</td>
+                            <td></td>
                             <td>
-                                <!-- <form action="{{route('user.destroy', $row->id)}}" method="post">
-                                        @csrf
-                                        {{method_field('DELETE')}}
-                                        <button type="submit" class="btn btn-link text-danger text-gradient mb-0 p-0 "
-                                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete"><i
-                                                class="material-icons text-sm">delete</i></button> -->
-                                kjhguiuyuiokjh
+                                <form action="{{route('user.destroy', $row->id)}}" method="post">
+                                    @csrf
+                                    {{method_field('DELETE')}}
+                                    <button type="submit" class="btn btn-link text-danger text-gradient mb-0 p-0 "
+                                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete"><i
+                                            class="material-icons text-sm">delete</i></button>
+
                             </td>
                             </form>
                         </tr>
                     </tbody>
-                    <!-- @endforeach -->
+                    @endforeach
                 </table>
             </div>
         </div>

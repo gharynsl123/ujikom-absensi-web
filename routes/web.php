@@ -25,6 +25,8 @@ Auth::routes();
         Route::get('/kaprodi', 'KaprodiController@index');
 
         Route::resource('izin', 'IzinController');
+
+        Route::get('/absen', 'DashboardController@create');
     });
 
     // Route::middleware(['checkRole:guru'])->group(function () {
@@ -37,6 +39,6 @@ Auth::routes();
 
 
 
-    Route::middleware(['checkRole:siswa'])->group(function () {
-        Route::get('/absen', 'DashboardController@create');
-    });
+    // Route::middleware(['checkRole:siswa'])->group(function () {
+    //     Route::get('/absen', 'DashboardController@create');
+    // });
