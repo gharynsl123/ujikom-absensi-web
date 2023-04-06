@@ -15,7 +15,8 @@
             <span class="material-icons-round">
                 table_view
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('user.index')}}">User</a>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none"
+                href="{{route('user.index')}}">User</a>
         </div>
     </li>
     <li class="nav-item my-3">
@@ -23,7 +24,8 @@
             <span class="material-icons-round">
                 assignment_ind
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('user.create')}}">Create
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none"
+                href="{{route('user.create')}}">Create
                 User</a>
         </div>
     </li>
@@ -173,7 +175,7 @@
 
                 <table class="table table-hover m-0">
                     <thead>
-                        <tr>
+                        <tr class="">
                             <td class="h6">Nama</td>
                             <td class="h6">Action</td>
                         </tr>
@@ -186,9 +188,7 @@
                                 <form action="{{route('user.destroy', $row->id)}}" method="post">
                                     @csrf
                                     {{method_field('DELETE')}}
-                                    <button type="submit" class="btn btn-link text-danger text-gradient mb-0 p-0 "
-                                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete"><i
-                                            class="material-icons text-sm">delete</i></button>
+                                    <button type="submit" class="btn btn-link text-danger text-gradient mb-0 p-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top"><i class="material-symbols-rounded"></i>delete</button>
 
                             </td>
                             </form>
