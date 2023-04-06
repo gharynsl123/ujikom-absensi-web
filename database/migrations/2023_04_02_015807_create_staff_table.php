@@ -16,12 +16,12 @@ class CreateStaffTable extends Migration
         Schema::create('staff', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('id_class')->unsigned();
+            // $table->integer('id_class')->unsigned();
             $table->string('nama_lengkap');
             $table->enum('level', ['guru', 'kaprodi']);
             $table->string('email')->unique();
             $table->string('password')->unique();
-            $table->foreign('id_class')->on('class')->references('id');
+            // $table->foreign('id_class')->on('class')->references('id');
         });
     }
 

@@ -95,46 +95,45 @@
                 </div>
             </div>
             <div class="mt-1 px-3 pb-3">
-                <form action="#" method="post">
-
+                <form action="{{route('user.store')}}" method="post">
+                    @csrf
                     <div class="row">
                         <div class="input-group my-4">
                             <span class="input-group-text" id="basic-addon1">Nama Lengkap</span>
-                            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                            <input type="text" class="form-control" name="name" placeholder="Username" aria-label="Username"
                                 aria-describedby="basic-addon1">
                         </div>
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon1">Alamat E-mail</span>
-                            <input type="email" class="form-control" placeholder="mail" aria-label="Username"
+                            <input type="email" class="form-control" name="email" placeholder="mail" aria-label="Username"
                                 aria-describedby="basic-addon1">
                         </div>
                         <div class="col-md-6 my-4">
                             <div class="input-group">
                                 <label class="input-group-text" for="inputGroupSelect01">Class</label>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select name="kelas" class="form-select" id="inputGroupSelect01">
                                     <option selected>Choose...</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    @foreach($kelas as $row)
+                                    <option value="{{$row->class}}">{{$row->class}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-6 my-4">
                             <div class="input-group">
                                 <label class="input-group-text" for="inputGroupSelect01">Lavel</label>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select name="level" class="form-select" id="inputGroupSelect01">
                                     <option selected>Choose...</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option value="kaprodi">Kaprodi</option>
+                                    <option value="guru">Guru</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="col-md-12 mb-5">
                             <div class="input-group ">
-                                <span class="input-group-text" id="basic-addon1">password</span>
-                                <input type="text" class="form-control" placeholder="°°°°" aria-label="Username"
+                                <span class="input-group-text"  id="basic-addon1">password</span>
+                                <input type="password" class="form-control" name="password" placeholder="••••" aria-label="Username"
                                     aria-describedby="basic-addon1">
                             </div>
                         </div>
@@ -154,11 +153,12 @@
                 </div>
             </div>
             <div class="mt-1 px-3 pb-3">
-                <form action="#" method="post">
+                <form action="{{route('kelas.store')}}" method="post">
+                    @csrf
                     <div class="row">
                         <div class="input-group my-4">
                             <span class="input-group-text" id="basic-addon1">Buat Kelas</span>
-                            <input type="text" class="form-control " placeholder="kelas.." aria-label="Username"
+                            <input name="class" type="text" class="form-control " placeholder="kelas.." aria-label="Username"
                                 aria-describedby="basic-addon1">
                         </div>
                         <div class="col-md-6">
@@ -181,7 +181,7 @@
                     @foreach($kelas as $row)
                     <tbody>
                         <tr>
-                            <td></td>
+                            <td>{{$row->class}}</td>
                             <td>
                                 <form action="{{route('user.destroy', $row->id)}}" method="post">
                                     @csrf

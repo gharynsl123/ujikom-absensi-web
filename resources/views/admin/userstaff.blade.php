@@ -107,6 +107,8 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($user as $row)
+                    @if($row->level != 'admin' && $row->level != 'siswa')
                     <tr>
                         <td>
                             <div class="d-flex px-2 py-1">
@@ -115,20 +117,19 @@
                                         alt="##">
                                 </div>
                                 <div class="d-flex flex-column justify-content-center">
-                                    <h6 class="mb-0">John Michael</h6>
-                                    <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
+                                    <h6 class="mb-0">{{$row->name}}</h6>
+                                    <p class="text-xs text-secondary mb-0">{{$row->email}}</p>
                                 </div>
                             </div>
                         </td>
                         <td class="align-middle">
-                            <p class=" mb-0">Manager</p>
-                            <p class=" text-secondary mb-0">Organization</p>
+                            <p class="mb-0">{{$row->kelas}}</p>
                         </td>
                         <td class="align-middle text-center text-sm">
-                            <span class="badge bg-info text-dark">Guru</span>
+                            <span class="badge bg-info text-dark">{{$row->level}}</span>
                         </td>
                         <td class="align-middle text-center">
-                            <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
+                            <span class="text-secondary text-xs font-weight-bold">{{$row->created_at}}</span>
                         </td>
                         <td class="align-middle">
                             <a href="" class="text-secondary text-decoration-none">
@@ -136,35 +137,8 @@
                             </a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <div class="d-flex px-2 py-1">
-                                <div>
-                                    <img src="smk cikoko.png" class="img-thumbnail me-3 rounded-3" style="width: 100px;"
-                                        alt="##">
-                                </div>
-                                <div class="d-flex flex-column justify-content-center">
-                                    <h6 class="mb-0 text-sm">John uhgfhjhg</h6>
-                                    <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="align-middle">
-                            <p class="text-xs font-weight-bold mb-0">Manager</p>
-                            <p class="text-xs text-secondary mb-0">Organization</p>
-                        </td>
-                        <td class="align-middle text-center text-sm">
-                            <span class="badge bg-info text-dark">kaprodi</span>
-                        </td>
-                        <td class="align-middle text-center">
-                            <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
-                        </td>
-                        <td class="align-middle">
-                            <a href="" class="text-secondary text-decoration-none">
-                                Edit
-                            </a>
-                        </td>
-                    </tr>
+                    @endif
+                    @endforeach
                 </tbody>
             </table>
         </div>
