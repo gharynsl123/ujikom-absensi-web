@@ -151,8 +151,7 @@
                             </select>
                         </div>
                         <div class="col-md-2"></div>
-                        <div class="col-md-10">
-                             <label for="formFile" class="form-label">Default file input example</label> 
+                        <div class="col-md-10"> 
                             <input class="form-control" required type="file" id="formFile" style="height: 100px;" name="bukti_foto">
                             <div id="passwordHelpBlock" class="form-text">
                                 Kirim bukti keterangan
