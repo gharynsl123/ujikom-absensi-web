@@ -41,6 +41,6 @@ Auth::routes();
 
 
 
-    // Route::middleware(['checkRole:siswa'])->group(function () {
-    //     Route::get('/absen', 'DashboardController@create');
-    // });
+    Route::middleware(['checkRole:siswa'])->group(function () {
+        Route::get('/absen', 'DashboardController@create');
+    });
