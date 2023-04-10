@@ -29,6 +29,8 @@ Auth::routes();
         Route::get('/absen', 'DashboardController@create');
 
         Route::resource('/profile', 'ProfileController');
+
+        Route::resource('/kelas', 'KelasController');
     });
 
     // Route::middleware(['checkRole:guru'])->group(function () {
