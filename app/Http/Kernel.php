@@ -65,7 +65,7 @@ class Kernel extends HttpKernel
         'checkrole' => \App\Http\Middleware\CheckRole::class,
 
         // // Middleware custom
-        // 'admin' => \App\Http\Middleware\AdminMiddleware::class,
+        'admin' => \App\Http\Middleware\AdminMiddleware::class,
         // 'kaprodi' => \App\Http\Middleware\KaprodiMiddleware::class,
         // 'guru' => \App\Http\Middleware\GurudiMiddleware::class,
         // 'siswa' => \App\Http\Middleware\SiswadiMiddleware::class,

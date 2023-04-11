@@ -21,7 +21,7 @@ class CheckRole
 
         $user = auth()->user();
 
-        if (!$user->isAdmin() && !$user->isGuru() && !$user->isKaprogdi() && !$user->isSiswa()) {
+        if (!$user->isAdmin() && !$user->isGuru() && !$user->isKaprodi() && !$user->isSiswa()) {
             return redirect('/login');
         }
 
