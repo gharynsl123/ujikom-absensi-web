@@ -175,7 +175,7 @@
                             <tr>
                                 <td class="p-3">{{$row->class}}</td>
                                 <td class="p-3">
-                                    <form action="{{route('user.destroy', $row->id)}}" method="post">
+                                    <form action="{{route('kelas.destroy', $row->id)}}" method="post">
                                         @csrf
                                         {{method_field('DELETE')}}
                                         <button type="submit" class="btn btn-link text-danger text-gradient mb-0 p-0"
