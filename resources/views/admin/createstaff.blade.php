@@ -164,7 +164,7 @@
 
                 <table class="table table-hover m-0">
                     <thead>
-                        <tr class="table-secondary">
+                        <tr>
                             <td class="h6 p-3">Nama</td>
                             <td class="h6 p-3">Action</td>
                         </tr>
