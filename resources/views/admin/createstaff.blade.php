@@ -92,8 +92,8 @@
     <div class="col-md-6 mb-3">
         <div class="rounded-3 bg-white shadow">
             <div class="pb-0 m-0 px-3">
-                <div class="badge mt-3 bg-dark p-2 text-wrap" style="width: 7rem;">
-                    Make Users
+                <div class="badge mt-3 bg-dark p-2 text-wrap" style="width: 8rem;">
+                    Make Users Staff
                 </div>
             </div>
             <div class="mt-1 px-3 pb-3">
@@ -102,29 +102,18 @@
                     <div class="row">
                         <div class="input-group my-4">
                             <span class="input-group-text" id="basic-addon1">Nama Lengkap</span>
-                            <input type="text" class="form-control" name="name" placeholder="Username" aria-label="Username"
+                            <input type="text" class="form-control" require name="name" placeholder="Username" aria-label="Username"
                                 aria-describedby="basic-addon1">
                         </div>
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon1">Alamat E-mail</span>
-                            <input type="email" class="form-control" name="email" placeholder="mail" aria-label="Username"
+                            <input type="email" class="form-control" require name="email" placeholder="mail" aria-label="Username"
                                 aria-describedby="basic-addon1">
                         </div>
-                        <div class="col-md-6 my-4">
-                            <div class="input-group">
-                                <label class="input-group-text" for="inputGroupSelect01">Class</label>
-                                <select name="kelas" class="form-select" id="inputGroupSelect01">
-                                    <option selected>Choose...</option>
-                                    @foreach($kelas as $row)
-                                    <option value="{{$row->class}}">{{$row->class}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6 my-4">
+                        <div class="col-md-12 my-4">
                             <div class="input-group">
                                 <label class="input-group-text" for="inputGroupSelect01">Lavel</label>
-                                <select name="level" class="form-select" id="inputGroupSelect01">
+                                <select name="level" require class="form-select" id="inputGroupSelect01">
                                     <option selected>Choose...</option>
                                     <option value="kaprodi">Kaprodi</option>
                                     <option value="guru">Guru</option>
@@ -135,7 +124,7 @@
                         <div class="col-md-12 mb-5">
                             <div class="input-group ">
                                 <span class="input-group-text"  id="basic-addon1">password</span>
-                                <input type="password" class="form-control" name="password" placeholder="••••" aria-label="Username"
+                                <input type="password" class="form-control" require name="password" placeholder="••••" aria-label="Username"
                                     aria-describedby="basic-addon1">
                             </div>
                         </div>
@@ -200,5 +189,55 @@
         </div>
     </div>
 
+    <p class="text-capitalize mt-5 fs-3 m-0 fw-bold">For Student</p><hr class="ms-2" style="height: 1px; width: 18rem;">
+    <div class="row m-0">
+    <div class="col-md-6 mb-3 p-0">
+        <div class="rounded-3 bg-white shadow">
+            <div class="pb-0 m-0 px-3">
+                <div class="badge mt-3 bg-dark p-2 text-wrap" style="width: 8rem;">
+                    Make Users Student
+                </div>
+            </div>
+            <div class="mt-1 px-3 pb-3">
+                <form action="{{route('user.store')}}" method="post">
+                    @csrf
+                    <div class="row">
+                        <div class="input-group my-4">
+                            <span class="input-group-text" id="basic-addon1">Nama Lengkap</span>
+                            <input type="text" class="form-control" require name="name" placeholder="Username" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">Alamat E-mail</span>
+                            <input type="email" class="form-control" require name="email" placeholder="mail" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="col-md-12 my-4">
+                            <div class="input-group">
+                                <label class="input-group-text" for="inputGroupSelect01">Lavel</label>
+                                <select name="level" require class="form-select" id="inputGroupSelect01">
+                                    <option selected>Choose...</option>
+                                    <option value="kaprodi">Kaprodi</option>
+                                    <option value="guru">Guru</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mb-5">
+                            <div class="input-group ">
+                                <span class="input-group-text"  id="basic-addon1">password</span>
+                                <input type="password" class="form-control" require name="password" placeholder="••••" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="form-control btn btn-success">Tambah Data</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
 </div>
 @endsection

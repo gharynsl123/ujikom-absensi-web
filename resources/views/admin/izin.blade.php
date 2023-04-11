@@ -1,34 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>FormWizard_v6</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="colorlib.com">
-
-
-    <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
-
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-
-
-    <script src="js/jquery.steps.js"></script>
-
-    <script src="js/main.js"></script>
-
-</body>
-
-</html> -->
-
 @extends('admin.layouts.mainview')
 
 @section('sidebar')

@@ -16,7 +16,7 @@
                         email
                     </span>
                 </span>
-                <input required type="email" name="email" id="email" class="form-control"
+                <input required type="email" name="email" id="email" class="form-control  @error('email') is-invalid @enderror"
                     aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 
                 @error('email')
@@ -34,7 +34,13 @@
                     </span>
                 </span>
                 <input id="password" name="password" autocomplete="current-password" required type="password"
-                    class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    class="form-control @error('password') is-invalid @enderror" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
             </div>
             <button type="submit" class="btn btn-success mt-3">Login</button>
 

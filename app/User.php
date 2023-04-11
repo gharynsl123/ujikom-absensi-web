@@ -9,19 +9,33 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
 
-    protected $fillable = [
-        'name', 'email', 'password', 'level',
-    ];
+     protected $guarded = [];
 
-    protected $hidden = [
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+
+     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
 
+    // Multyper User
     public function isAdmin()
     {
         return $this->level === 'admin';
@@ -32,9 +46,9 @@ class User extends Authenticatable
         return $this->level === 'guru';
     }
 
-    public function isKaprogdi()
+    public function isKaprodi()
     {
-        return $this->level === 'kaprogdi';
+        return $this->level === 'kaprodi';
     }
 
     public function isSiswa()
@@ -42,28 +56,4 @@ class User extends Authenticatable
         return $this->level === 'siswa';
     }
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $guarded = [];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    // protected $hidden = [
-    //     'password', 'remember_token',
-    // ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-//     protected $casts = [
-//         'email_verified_at' => 'datetime',
-//     ];
 }

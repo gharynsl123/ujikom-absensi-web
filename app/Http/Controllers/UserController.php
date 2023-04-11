@@ -3,25 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Kelas;
 use App\User;
+use App\Kelas;
 
-class UserStaffController extends Controller
+class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    
+
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+
     public function index()
     {
+        // $this->middleware('admin');
         $user = User::all();
-        return view ('admin.userstaff', compact('user'));
+        return view('admin.userstaff', compact('user'));
     }
 
     /**
@@ -31,9 +33,9 @@ class UserStaffController extends Controller
      */
     public function create()
     {
-        $kelas = Kelas::all();
         $user = User::all();
-        return view('admin.createstaff', compact('kelas','user'));
+        $kelas = Kelas::all();
+        return view('admin.createstaff', compact('user','kelas'));
     }
 
     /**
@@ -44,7 +46,12 @@ class UserStaffController extends Controller
      */
     public function store(Request $request)
     {
-        User::create($request->all());
+        $input = $request->all();
+        if($request->input('password'))
+        {
+            $input['password'] = bcrypt($input['password']);
+        }
+        User::create($input);
         return back();
     }
 
@@ -67,8 +74,7 @@ class UserStaffController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('admin.editstaff', compact('user'));
+        //
     }
 
     /**
@@ -91,7 +97,7 @@ class UserStaffController extends Controller
      */
     public function destroy($id)
     {
-        $data = Kelas::find($id);
+        $data = User::find($id);
         $data->delete();
         return back();
     }
