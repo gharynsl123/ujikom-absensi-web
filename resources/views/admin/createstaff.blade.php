@@ -164,21 +164,20 @@
 
                 <table class="table table-hover m-0">
                     <thead>
-                        <tr class="">
-                            <td class="h6">Nama</td>
-                            <td class="h6">Action</td>
+                        <tr class="table-secondary">
+                            <td class="h6 p-3">Nama</td>
+                            <td class="h6 p-3">Action</td>
                         </tr>
                     </thead>
                     @foreach($kelas as $row)
                     <tbody>
                         <tr>
-                            <td>{{$row->class}}</td>
-                            <td>
+                            <td class="p-3">{{$row->class}}</td>
+                            <td class="p-3">
                                 <form action="{{route('user.destroy', $row->id)}}" method="post">
                                     @csrf
                                     {{method_field('DELETE')}}
-                                    <button type="submit" class="btn btn-link text-danger text-gradient mb-0 p-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top"><i class="material-symbols-rounded"></i>delete</button>
-
+                                    <button type="submit" class="btn btn-link text-danger text-gradient mb-0 p-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top"><span class="material-symbols-rounded">delete</span></button>
                             </td>
                             </form>
                         </tr>
