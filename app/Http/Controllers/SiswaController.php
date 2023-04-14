@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Profile;
 
-class ProfileController extends Controller
+class SiswaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,16 +12,13 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
     public function index()
     {
-        $user = User::all();
-        $profile = Profile::where('id_user', auth()->user()->id)->get()->all();;
-        return view('admin.profile', compact('user', 'profile'));
+        //
     }
 
     /**
@@ -44,7 +39,13 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        if($request->input('password'))
+        {
+            $input['password'] = bcrypt($input['password']);
+        }
+        Siswa::create($input);
+        return back();
     }
 
     /**

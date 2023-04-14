@@ -201,12 +201,12 @@
         <div class="col-md-6 mb-3">
             <div class="rounded-3 bg-white shadow">
                 <div class="pb-0 m-0 px-3">
-                    <div class="badge mt-3 bg-dark p-2 text-wrap" style="width: 8rem;">
-                        Make Users Staff
+                    <div class="badge mt-3 bg-dark p-2 text-wrap" style="width: 9rem;">
+                        Make Users Student
                     </div>
                 </div>
                 <div class="mt-1 px-3 pb-3">
-                    <form action="{{route('user.store')}}" method="post">
+                    <form action="{{route('siswa.store')}}" method="post">
                         @csrf
                         <div class="row">
                             <div class="input-group my-4">
@@ -220,7 +220,13 @@
                                     aria-label="Username" aria-describedby="basic-addon1">
                             </div>
 
-                            <div class="col-md-12 my-4">
+                            <div class="input-group my-4">
+                                <span class="input-group-text" id="basic-addon1">NISN</span>
+                                <input type="email" class="form-control" require name="nisn" placeholder="mail"
+                                    aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+
+                            <div class="col-md-12 mb-4">
                                 <div class="input-group ">
                                     <span class="input-group-text" id="basic-addon1">password</span>
                                     <input type="password" class="form-control" require name="password"
