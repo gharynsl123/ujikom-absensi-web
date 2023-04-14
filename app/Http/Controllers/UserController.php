@@ -74,7 +74,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        $kelas = Kelas::all();
+        return view('admin.editstaff', compact('user','kelas'));
     }
 
     /**
@@ -86,7 +88,22 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        // $kelas = Kelas::all();
+        $data = $request->all();
+
+        if($request->input('password'))
+        {
+            // jika data password akan diubah, maka data yang baru akan di enkripsi 
+            $data['password'] = bcrypt($data['password']);
+        }
+        else
+        {
+            // jika data tidak diubah, maka akan menggunakan data lama dan tetap dienkripsi
+            $data = Arr::except($data,['password']);
+        }
+        $user->update($data);
+        return redirect('/user');
     }
 
     /**
@@ -99,6 +116,6 @@ class UserController extends Controller
     {
         $data = User::find($id);
         $data->delete();
-        return back();
+        return redirect('/user');
     }
 }

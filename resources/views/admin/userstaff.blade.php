@@ -132,9 +132,7 @@
                             <span class="text-secondary text-xs font-weight-bold">{{$row->created_at}}</span>
                         </td>
                         <td class="align-middle">
-                            <a href="" class="text-secondary text-decoration-none">
-                                Edit
-                            </a>
+                            <a href="{{route('user.edit',$row->id)}}" class="btn btn-success px-4">Edit</a>
                         </td>
                     </tr>
                     @endif

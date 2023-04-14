@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Kelas;
+use App\user;
 
 class KelasController extends Controller
 {
@@ -81,6 +82,8 @@ class KelasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Kelas::find($id);
+        $data->delete();
+        return back();
     }
 }

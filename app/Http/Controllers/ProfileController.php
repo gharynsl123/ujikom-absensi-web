@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Profile;
 
 class ProfileController extends Controller
 {
@@ -19,7 +21,8 @@ class ProfileController extends Controller
 
     public function index()
     {
-        return view('admin.profile');
+        $profile = Profile::where('id_user', auth()->user()->id)->get()->all();;
+        return view('admin.profile', compact('profile'));
     }
 
     /**

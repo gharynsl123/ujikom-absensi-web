@@ -219,18 +219,8 @@
                                 <input type="email" class="form-control" require name="email" placeholder="mail"
                                     aria-label="Username" aria-describedby="basic-addon1">
                             </div>
-                            <div class="col-md-12 my-4">
-                                <div class="input-group">
-                                    <label class="input-group-text" for="inputGroupSelect01">Lavel</label>
-                                    <select name="level" require class="form-select" id="inputGroupSelect01">
-                                        <option selected>Choose...</option>
-                                        <option value="kaprodi">Kaprodi</option>
-                                        <option value="guru">Guru</option>
-                                    </select>
-                                </div>
-                            </div>
 
-                            <div class="col-md-12 mb-5">
+                            <div class="col-md-12 my-4">
                                 <div class="input-group ">
                                     <span class="input-group-text" id="basic-addon1">password</span>
                                     <input type="password" class="form-control" require name="password"
@@ -246,7 +236,6 @@
             </div>
         </div>
         <div class="col-md-6 mb-3">
-
         <div class="rounded-3 bg-white h-auto shadow">
                 <div class="table-responsive">
 

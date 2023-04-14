@@ -14,7 +14,7 @@ class CreatePerizinanTable extends Migration
     public function up()
     {
         Schema::create('perizinan', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->timestamps();
             $table->string('nama_lengkap');
             $table->string('kelas');
