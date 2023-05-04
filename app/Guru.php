@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Izin extends Model
+class Guru extends Model
 {
-    protected $table = 'izin';
+    protected $table = 'guru';
     protected $guarded = [];
 }

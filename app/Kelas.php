@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kelas extends Model
 {
-    protected $table = 'class';
-    protected $guarded = [] ;
+    protected $table = 'kelas';
+    protected $guarded = [];
 }
