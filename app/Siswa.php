@@ -12,7 +12,7 @@ class Siswa extends Model
     {
         return $this->belongsTo('App\User', 'id_user');
     }
-    public function class()
+    public function kelas()
     {
         return $this->belongsTo('App\Kelas', 'id_kelas');
     }
