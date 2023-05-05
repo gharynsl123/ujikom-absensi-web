@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->enum('level',['admin','kaprodi','guru','siswa'])->default('siswa');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('kode_user');
             $table->rememberToken();
             $table->timestamps();
         });

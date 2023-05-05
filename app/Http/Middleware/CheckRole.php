@@ -24,11 +24,11 @@ class CheckRole
         if (!$user->isAdmin() && !$user->isGuru() && !$user->isKaprodi() && !$user->isSiswa()) {
             return redirect('/login');
         }
-
+            
+            return $next($request);
+        
         if (!$user->{"is{$level}"}()) {
             abort(403, 'Unauthorized action.');
         }
-
-        return $next($request);
     }
 }

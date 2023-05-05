@@ -35,7 +35,29 @@ Auth::routes();
     // });
 
 
-    Route::middleware(['checkrole:kaprodi'])->group(function () {
+    Route::middleware(['ceklevel:kaprodi'])->group(function () {
+        Route::resource('/user', 'UserController');
+
+        Route::get('/' ,'DashboardController@index');
+        // Route::get('/home', 'DashboardController@index')->name('home');
+    
+        Route::get('/absen', 'DashboardController@create');
+
+        Route::get('/guru', 'GuruController@index');
+        // Route::get('/kaprodi', 'KaprodiController@index');
+
+        Route::resource('/izin', 'IzinController');
+
+        Route::get('/absen', 'DashboardController@create');
+
+        Route::resource('/profile', 'ProfileController');
+
+        Route::resource('/kelas', 'KelasController');
+        Route::resource('/siswa', 'SiswaController');
+    });
+
+
+    Route::middleware(['auth','ceklevel:admin'])->group(function () {
         Route::resource('/user', 'UserController');
 
         Route::get('/' ,'DashboardController@index');
@@ -56,21 +78,9 @@ Auth::routes();
         Route::resource('/siswa', 'SiswaController');
     });
 
-
-    Route::middleware(['checkrole:admin'])->group(function () {
-        Route::resource('/user', 'UserController');
-
-        Route::get('/' ,'DashboardController@index');
-        Route::get('/home', 'DashboardController@index')->name('home');
-    
+    Route::middleware(['auth','ceklevel:siswa'])->group(function () {
         Route::get('/absen', 'DashboardController@create');
-
-        Route::get('/guru', 'GuruController@index');
-        // Route::get('/kaprodi', 'KaprodiController@index');
-
         Route::resource('/izin', 'IzinController');
-
-        Route::get('/absen', 'DashboardController@create');
 
         Route::resource('/profile', 'ProfileController');
 
@@ -79,7 +89,7 @@ Auth::routes();
     });
 
 
-    // Route::middleware(['checkrole:kaprodi'])->group(function () {
+    // Route::middleware(['ceklevel:kaprodi'])->group(function () {
     //     Route::resource('/user', 'UserController');
 
     //     Route::get('/' ,'DashboardController@index');

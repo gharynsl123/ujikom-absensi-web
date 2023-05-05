@@ -2,6 +2,7 @@
 
 @section('sidebar')
 <ul class="nav nav-pills d-flex row">
+    @if (auth()->user()->level=="admin")
     <li class="nav-item my-3">
         <div class="nav-link fw-light text-white d-flex align-item-center">
             <span class="material-icons-round">
@@ -36,6 +37,7 @@
                 Report</a>
         </div>
     </li>
+    @endif
     <li class="nav-item mt-3 ms-3 ">
         <p class="text-uppercase opacity-50 fw-bolder text-white" disabled>
             <b>Absensi Siswa</b>
