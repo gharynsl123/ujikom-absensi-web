@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Absen;
 use Illuminate\Http\Request;
+use Carbon;
 
 class DashboardController extends Controller
 {
@@ -19,7 +21,8 @@ class DashboardController extends Controller
     
     public function index()
     {
-        return view ('admin.index');
+        $absen = Absen::all();
+        return view ('admin.index', compact('absen'));
     }
 
     /**
@@ -29,7 +32,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        return view ('admin.absen');
+        return view ('admin.absen', compact('absen'));
     }
 
     /**
@@ -40,7 +43,11 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-    
+        $input = $request->all();
+        $date = Carbon\Carbon::now();
+        $input['tanggal'] = $date;
+        Absen::create($input);
+        return back();
     }
 
     /**
