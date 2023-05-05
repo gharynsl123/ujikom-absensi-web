@@ -32,7 +32,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        return view ('admin.absen', compact('absen'));
+        return view ('admin.absen');
     }
 
     /**
