@@ -7,7 +7,7 @@
             <span class="material-icons-round">
                 dashboard
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/home">Dashboard</a>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('absen.index')}}">Dashboard</a>
         </div>
     </li>
     <li class="nav-item">
@@ -15,7 +15,8 @@
             <span class="material-icons-round">
                 table_view
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('user.index')}}">User</a>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none"
+                href="{{route('user.index')}}">User</a>
         </div>
     </li>
     <li class="nav-item my-3">
@@ -23,7 +24,8 @@
             <span class="material-icons-round">
                 assignment_ind
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('user.create')}}" >Create
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none"
+                href="{{route('user.create')}}">Create
                 User</a>
         </div>
     </li>
@@ -46,7 +48,7 @@
             <span class="material-icons-round">
                 pending_actions
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/absen">
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('absen.create')}}">
                 Absen</a>
         </div>
     </li>
@@ -95,6 +97,8 @@
             <table class="table table-hover align-items-center mb-0">
                 <thead>
                     <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kode guru
+                        </th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name
                         </th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
@@ -110,6 +114,7 @@
                     @foreach($user as $row)
                     @if($row->level != 'admin' && $row->level != 'siswa')
                     <tr>
+                        <td>{!!DNS1D::getBarcodeHTML("$row->id", 'PHARMA')!!}</td>
                         <td>
                             <div class="d-flex px-2 py-1">
                                 <div>

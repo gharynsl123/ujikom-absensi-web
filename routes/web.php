@@ -37,6 +37,7 @@ Auth::routes();
 
     Route::middleware(['ceklevel:kaprodi'])->group(function () {
         Route::resource('/user', 'UserController');
+        // Route::resource('/absen', 'UserController');
 
         Route::get('/' ,'DashboardController@index');
         // Route::get('/home', 'DashboardController@index')->name('home');
@@ -62,15 +63,13 @@ Auth::routes();
 
         Route::get('/' ,'DashboardController@index');
         Route::get('/home', 'DashboardController@index')->name('home');
-    
-        Route::get('/absen', 'DashboardController@create');
 
         Route::get('/guru', 'GuruController@index');
         // Route::get('/kaprodi', 'KaprodiController@index');
 
         Route::resource('/izin', 'IzinController');
 
-        Route::get('/absen', 'DashboardController@create');
+        Route::resource('/absen', 'DashboardController');
 
         Route::resource('/profile', 'ProfileController');
 
