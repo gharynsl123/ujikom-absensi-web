@@ -48,7 +48,7 @@
             <span class="material-icons-round">
                 pending_actions
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('absen.create')}}">
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="#">
                 Absen</a>
         </div>
     </li>
