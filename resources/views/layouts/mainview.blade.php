@@ -12,12 +12,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"></script>
+
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 
 </head>
 
@@ -46,5 +51,22 @@
         @yield('content')
     </section>
 
+    <script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
+    </script>
+    <script>
+    var konten = document.getElementById("konten");
+    CKEDITOR.replace(konten, {
+        width: '100%',
+        extraPlugins: 'editorplaceholder',
+        editorplaceholder: 'Deskripsi spesifikasi barang...',
+        uiColor: '#CCEAEE'
+    });
+    CKEDITOR.config.allowedContent = true;
+    </script>
+
 </body>
+
 </html>

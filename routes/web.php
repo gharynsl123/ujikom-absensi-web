@@ -11,65 +11,28 @@
 |
 */
 
+
+Route::get('/', function () {
+    return view('auth.login');
+});
+
 Auth::routes();
 
-    // Route untuk pengguna dengan peran admin
-    // Route::middleware(['auth', 'admin'])->group(function () {
-    //     Route::resource('/user', 'UserController');
-
-    //     Route::get('/' ,'DashboardController@index');
-    //     Route::get('/home', 'DashboardController@index')->name('home');
-    
-    //     Route::get('/absen', 'DashboardController@create');
-
-    //     Route::get('/guru', 'GuruController@index');
-    //     Route::get('/kaprodi', 'KaprodiController@index');
-
-    //     Route::resource('/izin', 'IzinController');
-
-    //     Route::get('/absen', 'DashboardController@create');
-
-    //     Route::resource('/profile', 'ProfileController');
-
-    //     Route::resource('/kelas', 'KelasController');
-    // });
-
-
-    // Route::middleware(['ceklevel:kaprodi'])->group(function () {
-    //     Route::resource('/user', 'UserController');
-
-    //     Route::get('/' ,'DashboardController@index');
-    //     // Route::get('/home', 'DashboardController@index')->name('home');
-    
-    //     Route::get('/absen', 'DashboardController@create');
-
-    //     Route::get('/guru', 'GuruController@index');
-    //     // Route::get('/kaprodi', 'KaprodiController@index');
-
-    //     Route::resource('/izin', 'IzinController');
-
-    //     Route::get('/absen', 'DashboardController@create');
-
-    //     Route::resource('/profile', 'ProfileController');
-
-    //     Route::resource('/kelas', 'KelasController');
-    //     Route::resource('/siswa', 'SiswaController');
-    // });
-
-
-    Route::middleware(['auth','ceklevel:admin'])->group(function () {
-        Route::resource('/user', 'UserController');
+Route::middleware(['auth','ceklevel:kaprodi'])->group(function () {
+    Route::resource('/absen', 'DashboardController');
+    Route::resource('/user', 'UserController');
 
         Route::get('/' ,'DashboardController@index');
-        Route::get('/home', 'DashboardController@index')->name('home');
-
+        // Route::get('/home', 'DashboardController@index')->name('home');
+    
+        Route::get('/absen', 'DashboardController@create');
 
         Route::get('/guru', 'GuruController@index');
         // Route::get('/kaprodi', 'KaprodiController@index');
 
         Route::resource('/izin', 'IzinController');
 
-        Route::resource('/absen', 'DashboardController');
+        Route::get('/absen', 'DashboardController@create');
 
         Route::resource('/profile', 'ProfileController');
 
@@ -77,54 +40,36 @@ Auth::routes();
         Route::resource('/siswa', 'SiswaController');
     });
 
-    Route::middleware(['auth','ceklevel:siswa'])->group(function () {
+
+Route::middleware(['auth','ceklevel:admin'])->group(function () {
+    Route::resource('/absen', 'DashboardController');
+    Route::resource('/user', 'UserController');
+
+        Route::get('/' ,'DashboardController@index');
+        Route::get('/home', 'DashboardController@index')->name('home');
+    
+        Route::get('/absen', 'DashboardController@create');
+
+        Route::get('/guru', 'GuruController@index');
+        // Route::get('/kaprodi', 'KaprodiController@index');
 
         Route::resource('/izin', 'IzinController');
 
+        Route::get('/absen', 'DashboardController@create');
 
+        Route::resource('/profile', 'ProfileController');
 
-        Route::resource('/kelas', 'KelasController');
-        Route::resource('/siswa', 'SiswaController');
-    });
+});
 
+    Route::middleware(['auth','ceklevel:siswa'])->group(function () {
+        Route::get('/absen', 'DashboardController@create');
+        Route::resource('/izin', 'IzinController');
 
-    // Route::middleware(['ceklevel:kaprodi'])->group(function () {
-    //     Route::resource('/user', 'UserController');
+        Route::resource('/profile', 'ProfileController');
 
-    //     Route::get('/' ,'DashboardController@index');
-    //     Route::get('/home', 'DashboardController@index')->name('home');
+});
+
+Route::resource('/kelas', 'KelasController');
+Route::resource('/siswa', 'SiswaController');
+Route::resource('/jurusan', 'JurusanController');
     
-    //     Route::get('/absen', 'DashboardController@create');
-
-    //     Route::get('/guru', 'GuruController@index');
-    //     // Route::get('/kaprodi', 'KaprodiController@index');
-
-    //     Route::resource('/izin', 'IzinController');
-
-    //     Route::get('/absen', 'DashboardController@create');
-
-    //     Route::resource('/profile', 'ProfileController');
-
-    //     Route::resource('/kelas', 'KelasController');
-    // });
-
-
-    // Route::middleware(['checkRole:guru'])->group(function () {
-    //     // Route::resource('/user', 'UserController');
-
-    //     Route::get('/' ,'DashboardController@index');
-    //     Route::get('/home', 'DashboardController@index')->name('home');
-    
-    //     Route::get('/absen', 'DashboardController@create');
-
-    //     Route::get('/guru', 'GuruController@index');
-    //     Route::get('/kaprodi', 'KaprodiController@index');
-
-    //     // Route::resource('/izin', 'IzinController');
-
-    //     // Route::get('/absen', 'DashboardController@create');
-
-    //     Route::resource('/profile', 'ProfileController');
-
-    //     Route::resource('/kelas', 'KelasController');
-    // });

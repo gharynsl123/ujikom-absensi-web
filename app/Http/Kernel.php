@@ -66,8 +66,8 @@ class Kernel extends HttpKernel
         'ceklevel' => \App\Http\Middleware\CekLevel::class,
 
         // // Middleware custom
-        'admin' => \App\Http\Middleware\AdminMiddleware::class,
-        // 'kaprodi' => \App\Http\Middleware\KaprodiMiddleware::class,
+        'admin' => \App\Http\Middleware\AdminMiddleware::class,2
+        // // 'kaprodi' => \App\Http\Middleware\KaprodiMiddleware::class,
         // 'guru' => \App\Http\Middleware\GurudiMiddleware::class,
         // 'siswa' => \App\Http\Middleware\SiswadiMiddleware::class,
     ];
