@@ -35,26 +35,26 @@ Auth::routes();
     // });
 
 
-    Route::middleware(['ceklevel:kaprodi'])->group(function () {
-        Route::resource('/user', 'UserController');
+    // Route::middleware(['ceklevel:kaprodi'])->group(function () {
+    //     Route::resource('/user', 'UserController');
 
-        Route::get('/' ,'DashboardController@index');
-        // Route::get('/home', 'DashboardController@index')->name('home');
+    //     Route::get('/' ,'DashboardController@index');
+    //     // Route::get('/home', 'DashboardController@index')->name('home');
     
-        Route::get('/absen', 'DashboardController@create');
+    //     Route::get('/absen', 'DashboardController@create');
 
-        Route::get('/guru', 'GuruController@index');
-        // Route::get('/kaprodi', 'KaprodiController@index');
+    //     Route::get('/guru', 'GuruController@index');
+    //     // Route::get('/kaprodi', 'KaprodiController@index');
 
-        Route::resource('/izin', 'IzinController');
+    //     Route::resource('/izin', 'IzinController');
 
-        Route::get('/absen', 'DashboardController@create');
+    //     Route::get('/absen', 'DashboardController@create');
 
-        Route::resource('/profile', 'ProfileController');
+    //     Route::resource('/profile', 'ProfileController');
 
-        Route::resource('/kelas', 'KelasController');
-        Route::resource('/siswa', 'SiswaController');
-    });
+    //     Route::resource('/kelas', 'KelasController');
+    //     Route::resource('/siswa', 'SiswaController');
+    // });
 
 
     Route::middleware(['auth','ceklevel:admin'])->group(function () {
@@ -62,15 +62,14 @@ Auth::routes();
 
         Route::get('/' ,'DashboardController@index');
         Route::get('/home', 'DashboardController@index')->name('home');
-    
-        Route::get('/absen', 'DashboardController@create');
+
 
         Route::get('/guru', 'GuruController@index');
         // Route::get('/kaprodi', 'KaprodiController@index');
 
         Route::resource('/izin', 'IzinController');
 
-        Route::get('/absen', 'DashboardController@create');
+        Route::resource('/absen', 'DashboardController');
 
         Route::resource('/profile', 'ProfileController');
 
@@ -79,10 +78,10 @@ Auth::routes();
     });
 
     Route::middleware(['auth','ceklevel:siswa'])->group(function () {
-        Route::get('/absen', 'DashboardController@create');
+
         Route::resource('/izin', 'IzinController');
 
-        Route::resource('/profile', 'ProfileController');
+
 
         Route::resource('/kelas', 'KelasController');
         Route::resource('/siswa', 'SiswaController');
