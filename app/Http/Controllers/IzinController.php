@@ -18,7 +18,7 @@ class IzinController extends Controller
      */
     public function index()
     {
-        return view('admin.izin');
+        return view('izin');
     }
 
     /**

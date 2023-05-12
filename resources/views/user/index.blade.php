@@ -1,4 +1,4 @@
-@extends('admin.layouts.mainview')
+@extends('layouts.mainview')
 
 @section('sidebar')
 <ul class="nav nav-pills d-flex row">
@@ -94,7 +94,7 @@
     </div>
     <div class="rounded-3 mt-2 shadow">
         <div class="table-responsive p-0">
-            <table class="table table-hover align-items-center mb-0">
+            <table class="table table-hover align-items-center mb-0" id="myTable">
                 <thead>
                     <tr>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kode guru
@@ -147,4 +147,5 @@
         </div>
     </div>
 </div>
+
 @endsection

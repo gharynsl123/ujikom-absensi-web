@@ -12,9 +12,9 @@ class Admin extends Seeder
     public function run()
     {
         $user = new \App\User;
-        $user->name = "admin1";
+        $user->name = "admin";
         // $user->username = "admin";
-        $user->email = "admin1@test.com";
+        $user->email = "admin@test.com";
         $user->level = "admin";
         $user->password = \Hash::make('asdasdasd');
         $user->save();

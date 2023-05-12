@@ -1,4 +1,8 @@
-@extends('admin.layouts.mainview')
+@extends('layouts.mainview')
+
+@if (auth()->user()->level=="siswa")
+@include('home.siswa')
+@else
 
 @section('sidebar')
 <ul class="nav nav-pills d-flex row">
@@ -36,6 +40,7 @@
                 Report</a>
         </div>
     </li>
+@if (auth()->user()->level=="siswa")
     <li class="nav-item mt-3 ms-3 ">
         <p class="text-uppercase opacity-50 fw-bolder text-white" disabled>
             <b>Absensi Siswa</b>
@@ -59,6 +64,7 @@
                 Ajukan Izin</a>
         </div>
     </li>
+@endif
     <li class="nav-item mt-4 ms-3 ">
         <p class="text-uppercase opacity-50 fw-bolder text-white" disabled>
             <b>Account Page</b>
@@ -152,3 +158,4 @@
     </div>
 </div>
 @endsection
+@endif

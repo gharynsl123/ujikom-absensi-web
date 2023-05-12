@@ -1,28 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Jurusan;
 
-use App\Absen;
 use Illuminate\Http\Request;
-use Carbon;
 
-class DashboardController extends Controller
+class JurusanController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct() {
-        $this->middleware('auth');
-    }
- 
-    
     public function index()
     {
-        $absen = Absen::all();
-        return view ('home.admin', compact('absen'));
+        //
     }
 
     /**
@@ -32,7 +24,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //code
+        //
     }
 
     /**
@@ -43,11 +35,8 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        $date = Carbon\Carbon::now();
-        $input['tanggal'] = $date;
-        Absen::create($input);
-        return back();
+        Jurusan::create($request->all());
+        return redirect('/user/create');
     }
 
     /**
@@ -92,6 +81,8 @@ class DashboardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Jurusan::find($id);
+        $data->delete();
+        return back();
     }
 }

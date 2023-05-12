@@ -1,4 +1,4 @@
-@extends('admin.layouts.mainview')
+@extends('layouts.mainview')
 
 @section('sidebar')
 <ul class="nav nav-pills d-flex row">
@@ -92,7 +92,6 @@
     <div class="d-flex gap-4 h-auto justify-content-center row">
         <img src="{{ asset('storage/icon-web.png') }}" alt="#"
             class="rounded col-md-3 rounded-circle img-thumbnail mb-3" width="250px">
-        @if($profile)
         <div class="card col-md-8 p-3">
 
             <p class="fw-bolder m-0">Your Identiti Card</p>
@@ -126,14 +125,14 @@
                 <button type="button" class="btn btn-warning ms-2">Setting</button>
             </div>
         </div>
-        @elseif($user)
-        <p>youar {{$name}} in here</p>
-        @else
+
+        <p></p>
+
         <p class="text-center fs-3 fw-bold">You are admin here</p>
-        @endif
+
     </div>
 
-    @if($profile)
+
     <p class="fw-bold fs-3 mt-5">Absen Kamu</p>
     <div class="table-responsiven bg-white rounded-3 shadow-lg">
         <table class="table table-hover align-items-center m-0">
@@ -204,6 +203,6 @@
             </tbody>-->
         </table>
     </div>
-    @endif
+
 </div>
 @endsection

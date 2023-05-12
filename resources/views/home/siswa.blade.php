@@ -1,5 +1,3 @@
-@extends('admin.layouts.mainview')
-
 @section('sidebar')
 <ul class="nav nav-pills d-flex row">
     @if (auth()->user()->level=="admin")
@@ -142,5 +140,4 @@
         </div>
     </div>
 </div>
-
 @endsection
