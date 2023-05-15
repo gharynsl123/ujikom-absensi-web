@@ -47,6 +47,7 @@ Route::middleware(['auth','ceklevel:siswa'])->group(function () {
 
 });
 
+Route::resource('/mapel', 'MapelController');
 Route::resource('/kelas', 'KelasController');
 Route::resource('/siswa', 'SiswaController');
 Route::resource('/jurusan', 'JurusanController');

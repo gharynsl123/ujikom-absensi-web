@@ -55,6 +55,7 @@ class UserController extends Controller
         {
             $input['password'] = bcrypt($input['password']);
         }
+    
         User::create($input);
         return back();
     }
@@ -80,7 +81,8 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $kelas = Kelas::all();
-        return view('user.user-edit', compact('user','kelas'));
+        $mapel = Mapel::all();
+        return view('user.user-edit', compact('user','kelas', 'mapel'));
     }
 
     /**
@@ -93,7 +95,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        // $kelas = Kelas::all();
+        $mapel = Mapel::findOrFail($id);
         $data = $request->all();
 
         if($request->input('password'))
