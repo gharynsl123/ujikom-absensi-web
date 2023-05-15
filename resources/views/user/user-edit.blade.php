@@ -13,7 +13,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -84,17 +84,18 @@
             <p class="fs-4 fw-bold text-secondary text-capitalize mb-5">edit your user</p>
 
             <form action="{{route('user.update', $user->id)}}" method="post" enctype="multipart/form-data">
+
                 @csrf
                 {{method_field('PUT')}}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="justify-content-center d-flex">
-                            <img src="{{ asset('storage/icon-web.png') }}" alt="#"
-                                class="rounded rounded-3 img-thumbnail mb-3" width="250px">
+                            <img src="{{ asset('storage/icon-web.png') }}" 
+                                class="rounded rounded-3 img-thumbnail mb-3" width="250px" id="imagePreview">
 
                         </div>
                         <div class="mb-3">
-                            <input require type="file" class="form-control" id="image" name="image"
+                            <input require type="file" class="form-control" id="image-input" name="image"
                                 value="{{$user->image}}">
                         </div>
                     </div>
@@ -127,11 +128,11 @@
                             </div>
                             <div class="col-md-6 mb-4">
                                 <div class="input-group">
-                                    <label class="input-group-text" for="inputGroupSelect01">kelas</label>
+                                    <label class="input-group-text" for="inputGroupSelect01">Mapel</label>
                                     <select class="form-select" require id="inputGroupSelect01">
                                         <option value="0">Choose...</option>
-                                        @foreach ($kelas as $item)
-                                        <option value="{{$item->id}}">{{$item->class}}</option>
+                                        @foreach ($mapel as $item)
+                                        <option value="{{$item->id}}">{{$item->nama_mapel}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -157,4 +158,13 @@
     </div>
 </body>
 
+<script>
+    document.getElementById('image-input').addEventListener('change', (ev) => {
+        let reader = new FileReader()
+        reader.readAsDataURL(ev.target.files[0])
+        reader.onload = () => {
+            document.getElementById('imagePreview').setAttribute('src', reader.result)
+        }
+    })Ï
+</script>
 </html>

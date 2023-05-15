@@ -138,9 +138,8 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6 mb-3">
-            <div class="rounded-3 bg-white shadow">
+
+            <div class="rounded-3 bg-white mt-3 shadow">
                 <div class="pb-0 m-0 px-3">
                     <div class="badge mt-3 bg-dark p-2 text-wrap" style="width: 7rem;">
                         Make Class
@@ -182,7 +181,9 @@
                     </form>
                 </div>
             </div>
-            <div class="rounded-3 mt-2 bg-white shadow">
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="rounded-3 bg-white shadow">
                 <div class="pb-0 m-0 px-3">
                     <div class="badge mt-3 bg-dark p-2 text-wrap" style="width: 7rem;">
                         Make Jurusan
@@ -204,7 +205,29 @@
                         </div>
                     </form>
                 </div>
-                
+            </div>
+            <div class="rounded-3 bg-white mt-3 shadow">
+                <div class="pb-0 m-0 px-3">
+                    <div class="badge mt-3 bg-dark p-2 text-wrap" style="width: 7rem;">
+                        Make Mapel
+                    </div>
+                </div>
+                <div class="mt-1 px-3 pb-3">
+                    <form action="{{route('mapel.store')}}" method="post">
+                        @csrf
+                        <div class="row">
+                            <div class="input-group my-4">
+                                <span class="input-group-text" id="basic-addon1">Mapel</span>
+                                <input name="nama_mapel" type="text" class="form-control "
+                                    placeholder="RPL" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" class="form-control btn btn-success">Tambah Data</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
             
         </div>
