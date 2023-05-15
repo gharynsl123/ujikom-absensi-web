@@ -27,6 +27,7 @@ Route::middleware(['auth','ceklevel:kaprodi'])->group(function () {
     Route::resource('/profile', 'ProfileController');
 });
 
+        Route::resource('/izin', 'IzinController');
 
 Route::middleware(['auth','ceklevel:admin'])->group(function () {
     Route::resource('/absen', 'DashboardController');
