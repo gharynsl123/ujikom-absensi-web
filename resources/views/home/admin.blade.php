@@ -1,4 +1,8 @@
-@extends('admin.layouts.mainview')
+@extends('layouts.mainview')
+
+@if (auth()->user()->level=="siswa")
+@include('home.siswa')
+@else
 
 @section('sidebar')
 <ul class="nav nav-pills d-flex row">
@@ -7,7 +11,7 @@
             <span class="material-icons-round">
                 dashboard
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/home">Dashboard</a>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('absen.index')}}">Dashboard</a>
         </div>
     </li>
     <li class="nav-item">
@@ -36,6 +40,7 @@
                 Report</a>
         </div>
     </li>
+@if (auth()->user()->level=="siswa")
     <li class="nav-item mt-3 ms-3 ">
         <p class="text-uppercase opacity-50 fw-bolder text-white" disabled>
             <b>Absensi Siswa</b>
@@ -46,7 +51,7 @@
             <span class="material-icons-round">
                 pending_actions
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/absen">
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="">
                 Absen</a>
         </div>
     </li>
@@ -59,6 +64,7 @@
                 Ajukan Izin</a>
         </div>
     </li>
+@endif
     <li class="nav-item mt-4 ms-3 ">
         <p class="text-uppercase opacity-50 fw-bolder text-white" disabled>
             <b>Account Page</b>
@@ -69,7 +75,7 @@
             <span class="material-icons-round">
                 person
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('absen.index')}}">
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/profile">
                 Profile</a>
         </div>
     </li>
@@ -117,12 +123,13 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($absen as $row)
                         <tr>
                             <td>
                                 <div class="d-flex px-2 py-3">
                                     <div class="d-flex flex-column justify-content-center">
-                                        <h6 class="text-sm">John Michael</h6>
-                                        <p class="text-secondary mb-0">john@creative-tim.com</p>
+                                        <h6 class="text-sm">{{$row->users->name}}</h6>
+                                        <p class="text-secondary mb-0"> {{$row->users->email}}</p>
                                     </div>
                                 </div>
                             </td>
@@ -133,12 +140,13 @@
                                 <span class="badge bg-success mb-0 px-2">Hadir</span>
                             </td>
                             <td class="align-middle text-center mb-0 px-0 py-4">
-                                <span class="text-secondary">23/04/18</span>
+                                <span class="text-secondary">{{$row->tanggal}}</span>
                             </td>
                             <td class="align-middle text-center">
                                 <a href="" class="btn btn-success">Edit</a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -150,3 +158,4 @@
     </div>
 </div>
 @endsection
+@endif

@@ -19,7 +19,6 @@ class CreateAbsenTable extends Migration
             $table->time('jam_masuk');
             $table->time('jam_keluar');
             $table->date('tanggal');
-            $table->string('keterangan');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

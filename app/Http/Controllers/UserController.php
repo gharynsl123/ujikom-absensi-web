@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Kelas;
+use App\Mapel;
+use App\Jurusan;
 
 class UserController extends Controller
 {
@@ -21,9 +23,8 @@ class UserController extends Controller
 
     public function index()
     {
-        // $this->middleware('admin');
         $user = User::all();
-        return view('admin.userstaff', compact('user'));
+        return view('user.index', compact('user'));
     }
 
     /**
@@ -34,8 +35,11 @@ class UserController extends Controller
     public function create()
     {
         $user = User::all();
+        $guru = User::where('level', 'guru')->get()->all();
         $kelas = Kelas::all();
-        return view('admin.createstaff', compact('user','kelas'));
+        $jurusan = Jurusan::all();
+        $mapel = Mapel::all();
+        return view('user.user-create', compact('user','kelas', 'mapel', 'guru', 'jurusan'));
     }
 
     /**
@@ -76,7 +80,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $kelas = Kelas::all();
-        return view('admin.editstaff', compact('user','kelas'));
+        return view('user.user-edit', compact('user','kelas'));
     }
 
     /**

@@ -1,4 +1,4 @@
-@extends('admin.layouts.mainview')
+@extends('layouts.mainview')
 
 @section('sidebar')
 <ul class="nav nav-pills d-flex row">
@@ -8,7 +8,7 @@
             <span class="material-icons-round">
                 dashboard
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/home">Dashboard</a>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('absen.index')}}">Dashboard</a>
         </div>
     </li>
     <li class="nav-item">
@@ -48,7 +48,7 @@
             <span class="material-icons-round">
                 pending_actions
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/absen">
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('absen.index')}}">
                 Absen</a>
         </div>
     </li>

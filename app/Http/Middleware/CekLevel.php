@@ -13,15 +13,12 @@ class CekLevel
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, ...$levels)
+    public function handle($request, Closure $next)
     {
-        if (in_array($request->user()->level, $levels)) {
+        if (in_array($request->user()->level, ['admin', 'kaprodi', 'guru', 'siswa'])) {
             return $next($request);
         }
-        return redirect('/');
 
-        if($request->user()->level == 'siswa'){
-            return redirect('/absen');
-        }
+        return redirect('/absen'); // Ganti '/path' dengan path yang sesuai dengan tujuan redirect
     }
 }
