@@ -75,7 +75,7 @@
             <span class="material-icons-round">
                 person
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="/profile">
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('absen.index')}}">
                 Profile</a>
         </div>
     </li>
