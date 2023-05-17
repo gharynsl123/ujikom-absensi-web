@@ -99,7 +99,7 @@
                     </div>
                 </div>
                 <div class="mt-1 px-3 pb-3">
-                    <form action="{{route('user.store')}}" method="post">
+                    <form action="{{route('user.store', $user->hashid)}}" method="post">
                         @csrf
                         <div class="row">
                             <div class="input-group my-4">
