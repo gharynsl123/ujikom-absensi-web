@@ -106,7 +106,7 @@ class UserController extends Controller
         else
         {
             // jika data tidak diubah, maka akan menggunakan data lama dan tetap dienkripsi
-            $data = Arr::except($data,['password']);
+            $data['password'] = $user->password;
         }
         Kelas::create($data);
         $user->update($data);
