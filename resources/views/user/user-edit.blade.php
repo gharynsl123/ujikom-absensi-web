@@ -119,7 +119,7 @@
                             <div class="col-md-6 mb-4">
                                 <div class="input-group">
                                     <label class="input-group-text" for="inputGroupSelect01">level</label>
-                                    <select class="form-select" require id="inputGroupSelect01">
+                                    <select class="form-select" require id="inputGroupSelect01" name="level">
                                         <option value="{{$user->level}}">{{$user->level}}</option>
                                         <option value="guru">guru</option>
                                         <option value="kaprodi">kaprodi</option>
