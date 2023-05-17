@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class Admin extends Seeder
+class Siswa extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,10 +12,10 @@ class Admin extends Seeder
     public function run()
     {
         $user = new \App\User;
-        $user->name = "admin";
+        $user->name = "siswa";
         // $user->username = "admin";
-        $user->email = "admin@test.com";
-        $user->level = "admin";
+        $user->email = "siswa@test.com";
+        $user->level = "siswa";
         $user->password = \Hash::make('asdasdasd');
         // $user->id_mapel = null;
         $user->save();

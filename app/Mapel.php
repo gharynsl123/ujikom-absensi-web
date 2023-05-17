@@ -8,8 +8,8 @@ class Mapel extends Model
 {
     protected $table = 'mapel';
     protected $guarded = [];
-    public function users()
-    {
-        return $this->belongsTo('App\User', 'id_user');
-    }
+    // public function users()
+    // {
+    //     return $this->belongsTo('App\User', 'id_user');
+    // }
 }

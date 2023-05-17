@@ -95,8 +95,11 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        $mapel = Mapel::findOrFail($id);
+        // $mapel = Mapel::findOrFail($request->id_mapel);
+        $mapel = Mapel::all();
         $data = $request->all();
+
+        // $user = $request->input('id_mapel');
 
         if($request->input('password'))
         {
@@ -108,9 +111,9 @@ class UserController extends Controller
             // jika data tidak diubah, maka akan menggunakan data lama dan tetap dienkripsi
             $data['password'] = $user->password;
         }
-        Kelas::create($data);
+        // Kelas::create($data);
         $user->update($data);
-        return redirect('/user');
+        return redirect()->route('user.index');
     }
 
     /**

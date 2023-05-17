@@ -17,8 +17,6 @@ class CreateMapelTable extends Migration
             $table->increments('id');
             $table->string('nama_mapel');
             $table->integer('kode_mapel');
-            $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

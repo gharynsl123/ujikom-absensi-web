@@ -86,7 +86,7 @@
             <form action="{{route('user.update', $user->id)}}" method="post" enctype="multipart/form-data">
 
                 @csrf
-                {{method_field('PUT')}}
+                @method('PUT')
                 <div class="row">
                     <div class="col-md-6">
                         <div class="justify-content-center d-flex">
@@ -118,7 +118,7 @@
 
                             <div class="col-md-6 mb-4">
                                 <div class="input-group">
-                                    <label class="input-group-text" for="inputGroupSelect01">lavel</label>
+                                    <label class="input-group-text" for="inputGroupSelect01">level</label>
                                     <select class="form-select" require id="inputGroupSelect01">
                                         <option value="{{$user->level}}">{{$user->level}}</option>
                                         <option value="guru">guru</option>
@@ -129,7 +129,7 @@
                             <div class="col-md-6 mb-4">
                                 <div class="input-group">
                                     <label class="input-group-text" for="inputGroupSelect01">Mapel</label>
-                                    <select class="form-select" require id="inputGroupSelect01">
+                                    <select class="form-select" require id="inputGroupSelect01" name=" ">
                                         <option value="0">Choose...</option>
                                         @foreach ($mapel as $item)
                                         <option value="{{$item->id}}">{{$item->nama_mapel}}</option>
@@ -139,10 +139,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="mt-2 form-group col-md-6">
-                            <button type="submit" class="btn btn-success col-md-4 text-uppercase">edit</button>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="mt-2 form-group col-md-6">
+                        <button type="submit" class="btn btn-success col-md-4 text-uppercase">edit</button>
                     </div>
                 </div>
             </form>

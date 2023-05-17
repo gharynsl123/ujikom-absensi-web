@@ -36,6 +36,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function mapel()
+    {
+        return $this->belongsTo('App\Mapel', 'id_mapel');
+    }
+
     // Multyper User
     public function isAdmin()
     {

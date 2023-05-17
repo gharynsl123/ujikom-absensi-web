@@ -14,7 +14,7 @@
 
 Route::get('/', function () {
     return view('auth.login');
-});
+})->middleware('guest');
 
 Auth::routes();
 
@@ -27,17 +27,13 @@ Route::middleware(['auth','ceklevel:kaprodi'])->group(function () {
     Route::resource('/profile', 'ProfileController');
 });
 
-        Route::resource('/izin', 'IzinController');
 
 Route::middleware(['auth','ceklevel:admin'])->group(function () {
     Route::resource('/absen', 'DashboardController');
     Route::resource('/user', 'UserController');
-
-    
     Route::get('/guru', 'GuruController@index');
-    Route::resource('/izin', 'IzinController');
-    Route::resource('/profile', 'ProfileController');
 
+    Route::resource('/profile', 'ProfileController');
 });
 
 Route::middleware(['auth','ceklevel:siswa'])->group(function () {

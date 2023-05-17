@@ -18,6 +18,7 @@ class CreateAbsenTable extends Migration
             $table->integer('id_user')->unsigned();
             $table->time('jam_masuk');
             $table->time('jam_keluar');
+            $table->string('keterangan')->default('Hadir');
             $table->date('tanggal');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
