@@ -39,7 +39,7 @@ class UserController extends Controller
         $kelas = Kelas::all();
         $jurusan = Jurusan::all();
         $mapel = Mapel::all();
-        return view('user.user-create', compact('user','kelas', 'mapel', 'guru', 'jurusan'));
+        return view('user.user-create', compact('user','kelas', 'mapel', 'guru', 'jurusan', 'hash'));
     }
 
     /**

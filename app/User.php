@@ -18,6 +18,12 @@ class User extends Authenticatable
      protected $table = 'users';
      protected $guarded = [];
 
+     protected $appends = ['hashid'];
+
+     public function getHashidAttribute()
+     {
+         return Hashids::encode($this->attributes['id']);
+     }
     /**
      * The attributes that should be hidden for arrays.
      *
