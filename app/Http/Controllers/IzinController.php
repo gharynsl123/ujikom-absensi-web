@@ -18,7 +18,9 @@ class IzinController extends Controller
      */
     public function index()
     {
-        return view('izin');
+        $izin = Izin::all();
+        $users = \App\User::all();
+        return view('izin' , compact('izin','users'));
     }
 
     /**
@@ -40,7 +42,7 @@ class IzinController extends Controller
     public function store(Request $request)
     {
         Izin::create($request -> all());
-        return back();
+        return redirect('/absen');
     }
 
     /**

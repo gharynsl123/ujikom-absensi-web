@@ -99,8 +99,6 @@
             <table class="table table-hover align-items-center mb-0" id="myTable">
                 <thead>
                     <tr>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kode guru
-                        </th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name
                         </th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
@@ -116,7 +114,6 @@
                     @foreach($user as $row)
                     @if($row->level != 'admin' && $row->level != 'siswa')
                     <tr>
-                        <td>{!!DNS1D::getBarcodeHTML("$row->id", 'PHARMA')!!}</td>
                         <td>
                             <div class="d-flex px-2 py-1">
                                 <div>

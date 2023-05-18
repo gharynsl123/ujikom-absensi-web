@@ -16,10 +16,10 @@ class CreateIzinTable extends Migration
         Schema::create('izin', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_user')->unsigned();
-            $table->enum('keterangan', ['sakit', 'izin', 'alpa']);
-            $table->date('tanggal');
-            $table->string('bukti')->nullable();
-            $table->string('alasan')->nullable();
+            $table->enum('keterangan', ['sakit', 'izin', 'lainnya']);
+            // $table->date('tanggal');
+            $table->string('bukti_foto')->nullable();
+            $table->string('deskripsi')->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

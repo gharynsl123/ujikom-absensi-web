@@ -52,21 +52,31 @@
     </section>
 
     <script>
-    $(document).ready(function() {
-        $('#myTable').DataTable();
-    });
+        <script src = "https://code.jquery.com/jquery-3.7.0.slim.js"
+        integrity = "sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c="
+        crossorigin = "anonymous" >
+
     </script>
+
     <script>
+
+    $(document).ready(function() {
+    $('#myTable').DataTable();
+    });
+
     var konten = document.getElementById("konten");
     CKEDITOR.replace(konten, {
-        width: '100%',
-        extraPlugins: 'editorplaceholder',
-        editorplaceholder: 'Deskripsi spesifikasi barang...',
-        uiColor: '#CCEAEE'
+    width: '100%',
+    extraPlugins: 'editorplaceholder',
+    editorplaceholder: 'Deskripsi spesifikasi barang...',
+    uiColor: '#CCEAEE'
     });
     CKEDITOR.config.allowedContent = true;
     </script>
 
+
+
+    @yield('script')
 </body>
 
 </html>
