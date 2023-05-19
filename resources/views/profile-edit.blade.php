@@ -7,7 +7,8 @@
             <span class="material-icons-round">
                 dashboard
             </span>
-            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none" href="{{route('absen.index')}}">Dashboard</a>
+            <a aria-current="page" class=" ms-2 fw-light text-white text-decoration-none"
+                href="{{route('absen.index')}}">Dashboard</a>
         </div>
     </li>
     <li class="nav-item">
@@ -94,6 +95,7 @@
             class="rounded col-md-3 rounded-circle img-thumbnail mb-3" width="250px">
         <div class="card col-md-8 p-3">
 
+        <form action="" method="post">
             <p class="fw-bolder m-0">Your Identiti Card</p>
             <hr>
             <div class="table-responsive">
@@ -101,7 +103,7 @@
                     <tr class="text-capitalize">
                         <td>Nama</td>
                         <td>:</td>
-                        <td>{{Auth::user()->name}}</td>
+                        <td><input type="text" name="" id="" value="{{Auth::user()->name}}"></td>
                     </tr>
                     <tr>
                         <td>Email</td>
@@ -121,90 +123,18 @@
                 </table>
             </div>
             <div class="d-flex mt-auto">
-                @foreach($user as $row)
-                <a href="{{route('profile.edit', $row->id)}}" type="button" class="btn btn-success">Edit Bio</a>
-                @endforeach
+                <button type="button" class="btn btn-success">Submit</button>
                 <button type="button" class="btn btn-warning ms-2">Setting</button>
             </div>
         </div>
 
+    </form>
         <p></p>
 
         <p class="text-center fs-3 fw-bold">You are admin here</p>
 
     </div>
 
-
-    <p class="fw-bold fs-3 mt-5">Absen Kamu</p>
-    <div class="table-responsiven bg-white rounded-3 shadow-lg">
-        <table class="table table-hover align-items-center m-0">
-            <thead class="table-primary">
-                <tr>
-                    <th class="text-uppercase text-secondary ps-3">
-                        Name</th>
-                    <th class="text-uppercase text-secondary ps-2">
-                        NISN</th>
-                    <th class="text-center text-uppercase text-secondary">
-                        Status</th>
-                    <th class="text-center text-uppercase text-secondary">
-                        Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="d-flex px-2 py-3">
-                            <div class="d-flex flex-column justify-content-center">
-                                <h6 class="text-sm">John Michael</h6>
-                                <p class="text-secondary mb-0">john@creative-tim.com</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="align-middle ">
-                        <p class="mb-0">08127634</p>
-                    </td>
-                    <td class="align-middle text-center mb-0 py-4 px-0 text-sm">
-                        <span class="badge bg-success mb-0 px-2">Hadir</span>
-                    </td>
-                    <td class="align-middle text-center mb-0 px-0 py-4">
-                        <span class="text-secondary">23/04/18</span>
-                    </td>
-                </tr>
-            </tbody>
-            <!--<tbody>
-                 @foreach($user as $row)
-                @if($row->level == 'siswa')
-                <tr>
-                    <td>
-                        <div class="d-flex px-2 py-1">
-                            <div>
-                                <img src="smk cikoko.png" class="img-thumbnail me-3 rounded-3" style="width: 100px;"
-                                    alt="##">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center">
-                                <h6 class="mb-0">{{$row->name}}</h6>
-                                <p class="text-xs text-secondary mb-0">{{$row->email}}</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="align-middle">
-                        <p class="mb-0">{{$row->kelas}}</p>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                        <span class="badge bg-info text-dark">{{$row->level}}</span>
-                    </td>
-                    <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">{{$row->created_at}}</span>
-                    </td>
-                    <td class="align-middle">
-                        <a href="{{route('user.edit',$row->id)}}" class="btn btn-success px-4">Edit</a>
-                    </td>
-                </tr>
-                @endif
-                @endforeach 
-            </tbody>-->
-        </table>
-    </div>
 
 </div>
 @endsection

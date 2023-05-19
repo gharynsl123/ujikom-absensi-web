@@ -21,7 +21,7 @@ class ProfileController extends Controller
 
     public function index()
     {
-        $user = User::all();
+        $user = User::where('id', auth()->user()->id)->get()->all();
         // $profile = Profile::where('id_user', auth()->user()->id)->get()->all();;
         return view('profile', compact('user'));
     }
@@ -42,9 +42,10 @@ class ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        Profile::create($request -> all());
+        return redirect('/profile');
     }
 
     /**
@@ -66,7 +67,8 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::all();
+        return view ('profile-edit', compact('user'));
     }
 
     /**
